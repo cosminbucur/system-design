@@ -1,5 +1,6 @@
 The big three clouds (AWS, GCP, Azure) offer largely equivalent building blocks — compute, storage, managed databases, messaging, identity — under different names and with different defaults. For a Java developer, the useful skill isn't memorizing every service name; it's recognizing the underlying concept (e.g., "managed message queue," "serverless function," "managed relational DB") and knowing which concrete service maps to it on whichever provider you're using. This note maps the concepts to each provider's naming and calls out where Java-specific concerns (cold starts, connection pooling, SDKs) actually differ.
 
+![alt text](cloud-components.png)
 ![alt text](_aws-cloud-services.png)
 
 ## 1. Compute — The Core Building Blocks

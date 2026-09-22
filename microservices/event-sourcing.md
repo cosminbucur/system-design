@@ -2,6 +2,8 @@ Event sourcing stores every change to an entity as an immutable event, and deriv
 
 ![alt text](event-sourcing.png)
 
+![alt text](event-sourcing2.png)
+
 ## 1. The Core Idea: Events Are the Source of Truth
 
 ```java
