@@ -1,3 +1,9 @@
+# System design
+
+- [System Design](./system-design.md)
+- [API performance guide](api-performance-guide.md)
+- 📗 [Tomcat Thread Pool guide](UNSORTED/tomcat_thread_pool_guide.md)
+
 # Java
 
 - [Streams](./java/streams.md)
@@ -71,12 +77,15 @@
 
 - [DB Scaling](./database/database-scaling.md)
 - [Db Indexing](./database/db-indexing.md)
+  - [Composite Index Guide](./database/composite-index-guide.md)
 - [ID generation](./database/id-generation.md)
 - [Db Replication](./database/db-replication.md) - solves READ scaling without splitting data
 - [Caching](./database/caching.md) - reduces load on the database for hot reads
   - [Cache Eviction](./database/cache-eviction.md)
 - [Partitioning](./database/partitioning.md) - solves query/maintenance pain within one instance
 - [Sharding](./database/sharding.md) - splits a dataset across multiple independent database instances, each holding a subset of the overall data
+
+- [Query optimization guide](database/query-optimization-guide.md)
 
 # API
 
@@ -89,6 +98,7 @@
   - ℹ️ [Validation](./validation.md)
   - ℹ️ [Error Handling](./api/error-handling.md)
   - ℹ️ [API idempotency](./api/api-idempotency.md)
+  - 📘 [API latency tiers](./api/api_latency_tiers.md)
 
 - API integration patterns
   - [Webhooks](./api/webhooks.md)
@@ -214,12 +224,14 @@
 
 - [CI/CD](./devops/ci-cd.md)
 - [Continous Deployment](./devops/continuous-deployment.md)
+- [CI/CD Pipeline Guide](./devops/ci_cd_pipeline_guide.md)
 
 - [Containers](./devops/docker.md) Docker
 - [Orchestration](./devops/kubernetes.md) Kubernetes
 - [GitOps](./devops/gitops.md) ArgoCD
 
 - 🎯 [Observability](./devops/observability.md)
+  - [Logs - concepts]()
   - [Logs](./devops/logs.md)
   - [Metrics](./devops/metrics.md)
   - [Distributed Tracing](./devops/distributed-tracing.md)
@@ -237,7 +249,3 @@
 # AI
 
 - [AI agents](./ai/ai-agents.md)
-
-# System design
-
-- [System Design](./system-design.md)

@@ -1,0 +1,5 @@
+- Fixed capacity: The bucket holds a maximum number of tokens at any one time.
+- Steady refill rate: New tokens are added to the bucket at a constant, regular speed.
+- Spending tokens: Every incoming request must spend one or more tokens to pass through.
+- Rejection or delay: If tokens are available, the request goes through and tokens are removed. If the bucket is empty, the system rejects or delays the request.
+- Overflow limit: If the bucket reaches full capacity, any extra newly generated tokens simply spill over and disappear.
