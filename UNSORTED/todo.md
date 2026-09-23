@@ -35,3 +35,9 @@
 
 - stdout vs stderr
 - structured logging
+
+# system design
+
+https://www.systemdesignhandbook.com/guides/design-a-stock-exchange-system/#non-functional-requirements-that-drive-the-design
+
+https://algomaster.io/learn/system-design-interviews/design-notification-service
