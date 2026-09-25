@@ -1,5 +1,7 @@
 SQL (relational) and NoSQL databases solve the same underlying problem — durable, queryable storage — with different tradeoffs around schema rigidity, consistency, and scaling. Neither is universally "better"; the right choice depends on your data's shape and your consistency requirements.
 
+![alt text](relational-databases.png)
+
 ## 1. The Relational Model — Core Concepts
 
 Data is organized into tables (rows/columns) with a fixed schema, and relationships between tables are expressed via foreign keys rather than nesting data inside a single record.

@@ -1,0 +1,280 @@
+<mxfile host="65bd71144e">
+    <diagram id="xRD9KTk2INPqP3h7nBeQ" name="Page-1">
+        <mxGraphModel dx="865" dy="473" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="DRY" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="70" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="YAGNI" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Boy scout rule" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="220" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="KISS" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="170" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="keep it simple stupid" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="170" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="SOLID" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="300" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="single responsibility principle" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="350" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="open-closed" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="400" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="you ain't gonna need it" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="120" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="do not repeat yourself" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="70" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="a class should do one thing" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="350" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="liskov's substitution" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="450" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="cohesion" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="70" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="coupling" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="120" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="high -&amp;gt; loose&lt;br&gt;use interfaces to break dependencies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="120" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="low -&amp;gt; high&lt;br&gt;split logic in multiple classes" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="70" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="interface segregation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="500" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="break large interfaces into small and clear ones" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="500" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="open for extension and close for modification" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="400" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="parents and children should interchange" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="450" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="dependency inversion" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="550" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="parents should not depend on children, use interfaces" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="550" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Design patterns" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="640" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="creational" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="700" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="structural" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1040" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="behavioral" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1480" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Factory method" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="760" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Abstract factory" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="810" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Builder" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="860" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="Singleton" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="910" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Prototype" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="960" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Adapter" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1100" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Facade" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1150" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Composite" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1200" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Decorator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1250" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Proxy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1300" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Bridge" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1350" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Flyweight" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1400" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Strategy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1540" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="Command" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1840" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Iterator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1590" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Observer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1640" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Mediator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1740" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="State" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1790" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="Template method" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1692" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="Chain of responsibility" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1890" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Visitor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1940" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Memento" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="1990" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="Delegates commands to a chain of processing objects" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1890" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Defines the skeleton of an algorithm as an abstract class, allowing its sub-classes to provide concrete behavior" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1692" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Allows an object to alter its behavior when its internal state changes" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1790" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Allows loose coupling between classes by being the only class that has detailed knowledge of their methods" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1740" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="Is a publish/subscribe pattern which allows a number of observer objects to see an event" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1640" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Accesses the elements of an object sequentially without exposing its underlying representation" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1590" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;div&gt;Creates objects which encapsulate actions and parameters&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1840" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="Separates an algorithm from an object structure by moving the hierarchy of methods into one object" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1940" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="Provides the ability to restore an object to its previous state" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1990" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="Allows one of a family of algorithms to be selected on-the-fly at run-time" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1540" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="Reduce the repeated data when dealing with a large number of objects" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1400" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="Decouples an abstraction so two classes can vary independently" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1350" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="Provides a placeholder interface to an underlying object to control access, reduce cost, or reduce complexity" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1300" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="Allows for an object’s behavior to be extended dynamically at run time" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1250" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="Takes a group of objects into a single object" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1200" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="Provides a simplified interface to a library, a framework, or any other complex set of classes" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1150" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="Allows for two incompatible classes to work together by wrapping an interface around one of the existing classes" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="1100" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="Creates a new object from an existing object" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="960" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="Ensures only one instance of an object is created" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="910" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="Used to create complex objects" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="860" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="Creation of family of objects without specifying their concrete type" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="810" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="Creates objects without specifying the exact class to create" style="rounded=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="760" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="765" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="867.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="917.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1107.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1157.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1307.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1547.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1647.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1597.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="Law of Demeter" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="170" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="talk to friends only" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="170" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="fluent API" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="220" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="chained methods" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="220" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="improve existing code" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="220" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="General purpose" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="10" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="817.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1257.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="1699.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1847.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1797.5" width="25" height="25" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

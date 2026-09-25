@@ -1,0 +1,205 @@
+<mxfile host="65bd71144e">
+    <diagram id="u57QdOiPUI7uztkR11-A" name="web apps">
+        <mxGraphModel dx="2054" dy="1133" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="130" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="150" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="model" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="270" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="interact with db" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="business logic + validation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="130" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="60" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="redirect" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="60" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="webapp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="538" y="140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="WEB-INF" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="581.5" y="170" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="views" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="200" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="index.jsp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="230" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="resources" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="538" y="70" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="application.yml" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="581.5" y="100" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="17" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="308" y="580" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="war" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="193" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Tomcat: 8083" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="158" y="520" width="190" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="my web app:&lt;b&gt;8080&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="193" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="21" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="client" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="418" y="590" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="tomcat web interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+                    <mxGeometry x="193" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="24" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="tomcat user" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="68" y="790" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="tomcat-users.xml" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="68" y="820" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="server.xml" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="318" y="820" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="28" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="tomcat port" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="318" y="790" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="web.xml" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="260" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="190" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="32" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="UI" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="60" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="servlet1&lt;br&gt;servlet2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="290" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="WebAppInitializer" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="1040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="xml" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="1140" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="code" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="1250" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="web.xml" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="1110" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="web.xml" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="1220" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="code" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="377" y="1330" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="DispatcherServlet" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="567" y="1440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="43" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="699" y="1300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="ViewResolver" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="639" y="1110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="WebMvcConfig" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="599" y="1040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="PersistenceConfig" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="41" y="1040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="EntityManager" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="71" y="1250" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="48" target="50" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="TransactionManager" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="71" y="1320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="jsp / html views" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="639" y="1300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="persistence in db" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="71" y="1450" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="servlet routing" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="1440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="xml version" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="247" y="1110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="mixed version" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="247" y="1220" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="code version" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="247" y="1330" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="DataSource" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="71" y="1110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="EntityManagerFactory" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="71" y="1180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="spring (root) context" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="41" y="960" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="servlet&amp;nbsp; / web context" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="960" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="component&lt;br&gt;repository&lt;br&gt;service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="171" y="960" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="controllers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="960" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="&lt;pre style=&quot;box-sizing: border-box ; line-height: 1.615 ; border: 1px solid rgb(217 , 217 , 226) ; border-radius: 3px ; padding: 5px ; overflow: auto ; margin-top: 0px ; margin-bottom: 1em ; overflow-wrap: normal&quot;&gt;&lt;font face=&quot;menlo, monaco, courier new, courier, mono, serif&quot;&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;myWebApp/&lt;br/&gt;  WEB-INF/&lt;br/&gt;    web.xml&lt;br/&gt;    weblogic.xml&lt;br/&gt;    lib/&lt;br/&gt;      MyLib.jar&lt;br/&gt;    classes/&lt;br/&gt;      MyPackage/&lt;br/&gt;        MyServlet.class&lt;br/&gt;  index.html&lt;br/&gt;  index.jsp&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="370" width="213" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="deploy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="20" y="380" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="backend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="20" y="10" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="frontend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="538" y="10" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="contexts" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="30" y="910" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

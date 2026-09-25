@@ -1,4 +1,4 @@
-# Understanding the Java Fork/Join Pattern
+# Java Fork/Join Pattern
 
 The **Fork/Join pattern** (introduced in Java 7 via `java.util.concurrent`) is a framework designed to accelerate **parallel, CPU-bound tasks** using a classic divide-and-conquer strategy.
 

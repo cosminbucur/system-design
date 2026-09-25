@@ -1,0 +1,148 @@
+<mxfile host="65bd71144e">
+    <diagram id="F1EiHDdLLYncat1erv0i" name="spring mvc">
+        <mxGraphModel dx="685" dy="378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="DispatcherServlet" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="210" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="awaits incoming requests" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="210" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="380" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="ViewResolver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="450" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="HandlerMapping" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="310" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="mapping between requests and handler objects" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="310" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="resolves view by name" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="450" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="ThymeleafViewResolver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="450" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="component that works with request and response like servlets" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="380" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="WebApplicationContext" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="520" width="330" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="configuration for web apps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="AnnotationConfigApplicationContext" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="60" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="configuration for apps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="60" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="SecurityContext" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="660" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="authentication info" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="660" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="ModelAndView" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="1370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Model" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="1370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="show page" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="850" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="action" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="850" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="@PathVariable" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="1150" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="controller methods" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="800" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="@ModelAttribute&lt;br&gt;Object object" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="form th:&lt;b&gt;object&lt;/b&gt; = ${object}&lt;br&gt;&lt;br&gt;th:&lt;b&gt;field&lt;/b&gt; = *{property}&lt;br&gt;or&lt;br&gt;th:&lt;b&gt;field&lt;/b&gt; = ${object.property}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="1340" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="inject the form data into object" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="pass variable from path" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="1080" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="contexts" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="10" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="controllers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="750" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="@GetMapping" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="920" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="@PostMapping" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="920" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="@RequestParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="1150" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="map to query parameters, form data, and parts in multipart requests" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="1080" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="controller mappings" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="1030" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="holder for model attributes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="1300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="form th:&lt;b&gt;action&lt;/b&gt; = @{/items/{id}/add (id = ${item.id})}&lt;br&gt;th:&lt;b&gt;object&lt;/b&gt; = ${item}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="850" width="280" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="navigation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="800" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="button th:&lt;b&gt;href &lt;/b&gt;= /items" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="920" width="280" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="holder for model attributes and view" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="1300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="controller method params" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="1250" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="controller navigation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1030" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="@GetMapping&lt;br&gt;return &quot;item/&lt;b&gt;items&lt;/b&gt;&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1080" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="src/main/resources/templates/item&lt;br&gt;&lt;b&gt;items&lt;/b&gt;.html" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="1150" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="@PostMapping&lt;br&gt;return &quot;redirect:/item/&lt;b&gt;items&lt;/b&gt;&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="1150" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="go to mapping and refresh page" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="1080" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="load page" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="1080" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="used to read from controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="1440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="used to write to controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="1440" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

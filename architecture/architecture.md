@@ -1,5 +1,6 @@
 ![alt text](_architecture-styles.png)
 ![alt text](architecture.png)
+![alt text](architecture2.png)
 
 1. Layered Architecture
    Each layer plays a distinct and clear role within the application context.

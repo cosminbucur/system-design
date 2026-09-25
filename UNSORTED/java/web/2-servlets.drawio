@@ -1,0 +1,124 @@
+<mxfile host="65bd71144e">
+    <diagram id="Y7ft1CmoTHLp7bEB027j" name="servlets">
+        <mxGraphModel dx="992" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-1" value="Server (physical) localhost&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="40" width="340" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-2" value="GET http://localhost:8080/my-app/hello" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry width="230" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-3" value="Servlet container - tomcat" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="75" width="310" height="325" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-4" value="Web app - my app" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="110" width="270" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-5" value="Servlet - my servlet" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="145" width="240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-6" value="service (request, response)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="182.5" width="180" height="125" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-7" value="RequestDispatcher" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="545" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-8" value="Filter" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="545" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-9" value="War" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="284" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-10" value="Jar" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="416" y="670" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-11" value="JSP" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="402" y="252.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-12" value="JSTL" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="432" y="322.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-13" value="DispatcherServlet" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="545" y="710" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-14" value="Controller" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="545" y="780" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-15" value="Web app" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="284" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-16" value="HTTP" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-17" value="OSI model" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="30" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-18" value="TCP / IP model" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-19" value="Servlet" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="416" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-20" value="Servlet container" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="152" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-21" value="Deployment descriptor&lt;br&gt;web.xml" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="416" y="740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="0sgYrQAj9DsjC6A8VY-Y-22" value="Signals" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="30" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="EeQ5JtOgFwJhwNVUT8TK-2" value="Server" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="EeQ5JtOgFwJhwNVUT8TK-3" value="MVC" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="402.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-2" value="computer that serves data" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-3" value="http server + ability to run servlets" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="152" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-4" value="contains servlets&lt;br&gt;web.xml" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="284" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-5" value="result archive created by maven" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="284" y="710" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-6" value="class that handles request" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="416" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-7" value="defines servlets" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="416" y="810" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-8" value="syntax to mix html + java&lt;br&gt;&amp;lt;c: forEach&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="532" y="252.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-9" value="tags for jsp" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="562" y="322.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-10" value="html mixed with java&lt;br&gt;&amp;lt;% java %&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="532" y="182.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-11" value="scriptlet" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="402" y="182.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-12" value="navigate to servlets" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-13" value="main servlet" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="710" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="XpsL5-KE74CmKBr_EeF1-14" value="perform operation before request reaches servlet" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="_BinRuI0tPYm6ejzdkPL-4" value="model view controller pattern" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="532" y="402.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

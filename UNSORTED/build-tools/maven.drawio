@@ -1,0 +1,121 @@
+<mxfile host="65bd71144e">
+    <diagram id="COaS9xiCnIw7uhddbQQ6" name="Page-1">
+        <mxGraphModel dx="1862" dy="1706" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="groupId: company&lt;br&gt;artifactId: product&lt;br&gt;version: product version" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="-580" y="-841.5" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="maven repository" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-840" y="-1080" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="pom" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-600" y="-1066.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="dependencies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-570" y="-986.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="xml" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-570" y="-916.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value=".m2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-780" y="-836.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+                    <mxGeometry x="-780" y="-767" width="420" height="41" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;b&gt;parent pom&lt;br&gt;&lt;/b&gt;child modules" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="-1066.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;b&gt;child pom&lt;/b&gt;&lt;br&gt;parent&lt;br&gt;dependencies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="-986.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="root folder" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="-876.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="src.main.java&lt;br&gt;src.test.java" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-290" y="-806.5" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="com.company.product" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-250" y="-736" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="maven" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-820" y="-680" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;b&gt;maven folder structure&lt;/b&gt;&lt;br&gt;src.main.java&lt;br&gt;com.emag.eshop&lt;br&gt;packages&lt;br&gt;MyDog.java" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-790" y="-590" width="200" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;b&gt;maven convention&lt;/b&gt;&lt;br&gt;www.emag/eshop.com&lt;br&gt;&lt;br&gt;com.emag.eshop" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-680" y="-680" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="maven repository" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-495" y="-680" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value=".m2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-325" y="-350" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="dependency" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-170" y="-580" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="21" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;div&gt;&amp;lt;dependency&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;artifactId&amp;gt;&lt;b&gt;junit&lt;/b&gt;&amp;lt;/artifactId&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;version&amp;gt;&lt;b&gt;4.13&lt;/b&gt;&amp;lt;/version&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/dependency&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-350" y="-505" width="190" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="pom.xml" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-325" y="-580" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="maven multi project" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-790" y="-490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="26" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="src.main.java" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-790" y="-270" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="target" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#ffcccc;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="-570" y="-270" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value=".class" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-550" y="-220" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value=".jar" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-550" y="-180" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="jar" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-170" y="-350" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="framework" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="-790" y="-110" width="310" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="jar" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+                    <mxGeometry x="-750" y="-80" width="250" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="package" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-720" y="-50" width="210" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="class" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-710" y="-20" width="190" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="method" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-690" y="15" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="variable" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-625" y="40" width="55" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="framework - jar collection&lt;br&gt;jar - java archive&lt;br&gt;package - collection of classes&lt;br&gt;class - blueprints&lt;br&gt;method - functionality&lt;br&gt;variable" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-440" y="-100" width="190" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="&lt;div&gt;# maven package convention&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;com.sda.intro&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-440" y="10" width="190" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
