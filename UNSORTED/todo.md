@@ -25,12 +25,8 @@
 
 # microservices
 
-- API gateway
 - API thorttling vs rate limiting
   - token bucket
-
-- deduplication (prevent execution)
-- idempotency (safe effects)
 
 # security
 

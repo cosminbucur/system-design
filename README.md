@@ -158,6 +158,7 @@
   - 🟠 [Validation](validation.md)
   - 🟠 [Error Handling](api/error-handling.md)
   - 🔴 [API idempotency](api/api-idempotency.md)
+  - 🔴 [Deduplication](api/deduplication.md)
   - [API latency tiers](api/api_latency_tiers.md)
 
 - API integration patterns
@@ -221,7 +222,8 @@
     - 📗 [API gateway logging guide](layer-infrastructure/api-gateway-logging-guide.md)
     - 📦 [Distributed Logging](layer-infrastructure/distributed-logging.md) correlation ID + log aggregation
     - [Audit Logging]
-  - [Metrics](layer-infrastructure/metrics.md) Prometheus
+  - [Metrics](layer-infrastructure/metrics.md)
+    - [Prometheus](layer-infrastructure/prometheus.md)
     - [Distributed Tracing](layer-infrastructure/distributed-tracing.md) Jaeger
   - [Alerting](layer-infrastructure/alerting.md) Prometheus + Grafana
   - [Exception tracking]
@@ -285,7 +287,7 @@
 # Security
 
 - 🔴 🎯 [Security](security/security.md) OIDC, Oauth2, JWT
-  - [Authentication](security/authentication.md)
+  - 🔴 [Authentication](security/authentication.md)
   - [Encryption](security/encryption.md) Symmetric vs Asymmetric
   - [SSL/TLS, HTTPS](security/ssl-tls-https.md)
   - [Access Token](security/access-token.md)
@@ -350,6 +352,7 @@
 # AI
 
 - [AI agents](ai/ai-agents.md)
+- [Cursor Agent](ai/cursor-agent.md)
 
 🔴 Important
 🟠 Nice to have
