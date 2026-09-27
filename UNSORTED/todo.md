@@ -1,3 +1,5 @@
+> Explain core concepts, best practices and practical examples for
+
 # architecture
 
 - hexagonal architecture - adapters and ports to separate core from infrastructure (db, api)
@@ -9,6 +11,17 @@
 
 - rabbitmq
 - kafka
+
+# hibernate
+
+- flush()
+
+  // Assume these 2 operations are not in a transaction.
+
+  entityDao.save(entity);
+  dependentEntityDao.getByJoinQuery(dependentEntity, entity);
+
+  // The second query could fail as it required data from first query to be persisted.
 
 # microservices
 
@@ -22,7 +35,10 @@
 # security
 
 - sticky sessions
-- pkce
+- PCKE (pixie)
+- passkeys (passwordless authentication)
+  - Storage: Website stores the public key in its database.
+  - Unlocking: User device holds the private key, unlocked locally via biometrics.
 
 # fundamentals
 
@@ -34,7 +50,6 @@
 # logs
 
 - stdout vs stderr
-- structured logging
 
 # system design
 

@@ -1,6 +1,9 @@
 A linked list is a chain of nodes, each holding a value and a pointer to the next node — the opposite tradeoff from an array: no random access (`O(n)` to reach index `i`), but `O(1)` insertion/removal once you're already at the right node, since nothing needs to shift.
 
+![alt text](linked-list.png)
 ![alt text](linked-list-double.png)
+![alt text](linked-list-circular.png)
+![alt text](linked-list-double-circular.png)
 
 ## 1. The Core Structure
 

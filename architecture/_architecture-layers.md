@@ -2,6 +2,8 @@
 
 Modern system architectures are conceptually divided into four primary layers: the **Client Layer**, the **Edge/Ingress Layer**, the **Core Application Layer**, and the **Core Infrastructure & Control Plane Layer**.
 
+![alt text](layers.png)
+
 ---
 
 ## 1. The Core Infrastructure & Control Plane Layer

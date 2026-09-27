@@ -1,5 +1,7 @@
 An API operation is idempotent when making the same call twice has the same effect as making it once — the second call either does nothing new or returns the same result, rather than repeating the side effect. This matters enormously in distributed systems because network failures are ambiguous: if a client sends a request and the connection drops before the response arrives, the client genuinely cannot tell whether the server processed it or not. Idempotency is what makes "just retry" a safe default answer to that ambiguity instead of a risk of duplicating the operation.
 
+![alt text](idempotency.png)
+
 ## 1. The Ambiguous Timeout Problem
 
 ```
@@ -15,12 +17,12 @@ All three of those are indistinguishable from the client's point of view, yet th
 
 Some HTTP methods are idempotent by definition in the HTTP spec, and a correctly implemented API should honor that — retrying them is always safe.
 
-| Method | Idempotent? | Why |
-| --- | --- | --- |
-| `GET` | Yes | Reading data has no side effect to repeat |
-| `PUT` | Yes | Replacing a resource with the same representation twice leaves it in the same final state |
-| `DELETE` | Yes | Deleting an already-deleted resource still ends with it deleted (typically a `404` on the second call, but the end state is identical) |
-| `POST` | No | Creating a new resource each time is the default behavior — two identical `POST`s normally create two resources |
+| Method   | Idempotent? | Why                                                                                                                                    |
+| -------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `GET`    | Yes         | Reading data has no side effect to repeat                                                                                              |
+| `PUT`    | Yes         | Replacing a resource with the same representation twice leaves it in the same final state                                              |
+| `DELETE` | Yes         | Deleting an already-deleted resource still ends with it deleted (typically a `404` on the second call, but the end state is identical) |
+| `POST`   | No          | Creating a new resource each time is the default behavior — two identical `POST`s normally create two resources                        |
 
 `POST` is the one that needs explicit help, precisely because "create a new order" has no natural way to recognize "wait, I already did this one" without additional information supplied by the client.
 
@@ -75,7 +77,7 @@ public Payment charge(PaymentRequest request, String idempotencyKey) {
 
 ## 5. What the Idempotency Key Actually Identifies
 
-A key represents one specific *attempt* at an operation from the client's perspective, not the underlying business entity. The client is responsible for generating a new key for each genuinely new logical operation, and reusing the same key deliberately for retries of that same attempt.
+A key represents one specific _attempt_ at an operation from the client's perspective, not the underlying business entity. The client is responsible for generating a new key for each genuinely new logical operation, and reusing the same key deliberately for retries of that same attempt.
 
 ```java
 String idempotencyKey = UUID.randomUUID().toString();
@@ -103,7 +105,7 @@ public void expireOldIdempotencyKeys() {
 }
 ```
 
-Also worth being explicit about: if a retried request arrives with the same idempotency key but a *different* request body than the original, that's a client bug, not a legitimate retry — a correct implementation should detect the mismatch and reject it (typically `422`) rather than silently returning the original, unrelated result.
+Also worth being explicit about: if a retried request arrives with the same idempotency key but a _different_ request body than the original, that's a client bug, not a legitimate retry — a correct implementation should detect the mismatch and reject it (typically `422`) rather than silently returning the original, unrelated result.
 
 ## 7. Idempotency vs. the Transactional Outbox Pattern
 
@@ -111,12 +113,12 @@ Idempotency keys make an individual client-to-service call safe to retry; the tr
 
 ## 8. Best Practices
 
-| Practice | Recommendation |
-| --- | --- |
-| Require an idempotency key for any non-idempotent write (`POST`) that has a real side effect | Especially payments, order creation, and anything with a cost to duplicating. |
-| Enforce uniqueness at the database level, not just in application code | A check-then-insert without a `UNIQUE` constraint has a real race window under concurrent retries. |
-| Have the client generate one key per logical operation and reuse it on retry | Generating a new key per retry attempt defeats the entire mechanism. |
-| Detect a mismatched body on a reused key and reject it | Silently returning an unrelated cached result for a genuinely different request hides a real client bug. |
-| Expire idempotency keys after a bounded window | A day is a common default — don't keep them (or their storage cost) indefinitely. |
-| Return the original response, not just a generic "already processed" message | The client's retry logic usually expects the same shape of response it would have gotten the first time. |
-| Treat `GET`/`PUT`/`DELETE` as idempotent by design, and keep them that way | Don't accidentally introduce side effects into these methods that would break the safety callers already assume. |
+| Practice                                                                                     | Recommendation                                                                                                   |
+| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Require an idempotency key for any non-idempotent write (`POST`) that has a real side effect | Especially payments, order creation, and anything with a cost to duplicating.                                    |
+| Enforce uniqueness at the database level, not just in application code                       | A check-then-insert without a `UNIQUE` constraint has a real race window under concurrent retries.               |
+| Have the client generate one key per logical operation and reuse it on retry                 | Generating a new key per retry attempt defeats the entire mechanism.                                             |
+| Detect a mismatched body on a reused key and reject it                                       | Silently returning an unrelated cached result for a genuinely different request hides a real client bug.         |
+| Expire idempotency keys after a bounded window                                               | A day is a common default — don't keep them (or their storage cost) indefinitely.                                |
+| Return the original response, not just a generic "already processed" message                 | The client's retry logic usually expects the same shape of response it would have gotten the first time.         |
+| Treat `GET`/`PUT`/`DELETE` as idempotent by design, and keep them that way                   | Don't accidentally introduce side effects into these methods that would break the safety callers already assume. |

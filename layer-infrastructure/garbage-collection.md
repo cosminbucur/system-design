@@ -2,7 +2,7 @@
 
 Garbage Collection (GC) is the automatic memory management process in the Java Virtual Machine (JVM). Its primary objective is to reclaim memory occupied by unreferenced objects on the **Java Heap**, preventing memory exhaustion while freeing developers from manual memory allocation and deallocation (`malloc`/`free`).
 
----
+## ![alt text](jvm-gc.png)
 
 ## 1. Core Mechanics: How GC Works
 

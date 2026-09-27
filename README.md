@@ -6,26 +6,37 @@
 
 # Java
 
+- 🔴 [Exceptions](java/exceptions.md)
 - 🔴 [Streams](java/streams.md)
 - 🔴 [Functional Programming](java/functional-programming.md)
+- 🔴 [Sorting: Comparable and Comparator](java/sorting.md)
 - 🔴 [Modern Java features](java/modern-java-features.md)
 
 # Data Structures
 
-- 🔴 [Collections](java/collections.md)
+- 🔴 [Collections](data-structures/collections.md)
+- 🔴 [Java List Implementations](data-structures/java-list.md)
+- 🔴 [Java Map Implementations](data-structures/java-map.md)
+- 🔴 [Java Set Implementations](data-structures/java-set.md)
 
-# Data structures & Algorithms
+# Algorithms
 
 - [Time - Space Complexity](algorithms/time-space-complexity.md) Big O
+
+- Sorting
+  - [Sorting Algorithms](algorithms/algorithms-sort.md)
+
+- Searching
+  - [Searching Algorithms](algorithms/algorithms-search.md)
 
 - Linear
   - 🔴 📦 [Arrays](algorithms/arrays.md)
   - 🔴 📦 [Hashing](algorithms/hashing.md)
   - [Two-pointers](algorithms/two-pointers.md)
   - 📦 [Stack](algorithms/stack.md)
-  - 🟠 [Binary-search](algorithms/binary-search.md)
-  - [Sliding-window](algorithms/sliding-window.md)
-  - 🔴 📦 [Linked-list](algorithms/linked-list.md)
+  - 🟠 [Binary Search](algorithms/binary-search.md)
+  - [Sliding Window](algorithms/sliding-window.md)
+  - 🔴 📦 [Linked List](algorithms/linked-list.md)
 
 - Non Linear
   - 📦 [Trees](algorithms/trees.md)
@@ -35,7 +46,7 @@
     - [Priority Queue](algorithms/queue-priority.md) - airport
     - [Circular Queue](algorithms/queue-circular.md) - load balancing
     - [Deque](algorithms/queue-deque.md) - browser history
-    - [Blocking/Non-Blocking Queue](algorithms/queue-blocking.md) - thread safe
+    - [Blocking/Non-Blocking Queue](algorithms/queue-blocking.md)
   - [Intervals](algorithms/intervals.md)
 
 - Paradigms
@@ -53,14 +64,34 @@
 - [Concurrency vs Parallelism](java-multithreading/concurrency.md)
 
 - 🔴 🎯 [Multithreading](java-multithreading/_multithreading.md) ExecutorService
-- 📗 [Thread Safety Guide](java-multithreading/thread-safety-guide.md)
+- 🔴 📗 [Thread Safety Guide](java-multithreading/thread-safety-guide.md)
+- 🔴 📗 [Immutability Guide](java-multithreading/java-immutability-guide.md)
+
+- 🔴 [ThreadLocal vs ScopedValue](java-multithreading/threadlocal-scopedvalue.md)
+
+- 🔴 Synchronization mechanisms
+  - Low-level keywords
+    - [synchronized](java-multithreading/synchronized-deadlock.md)
+    - 🔴 [Volatile vs Atomic Classes](java-multithreading/volatile-atomic.md)
+  - Explicit locks
+    - 🔴 [ReentrantLock](java-multithreading/reentrantlock.md)
+    - ReentrantReadWriteLock
+    - StampedLock
+  - [High-level thread synchronizers](java-multithreading/thread-synchronizers-guide.md)
+    - CountDownLatch
+    - CyclicBarrier
+    - Semaphore
+    - Phaser
+
+- Thread-safe collections
+  - 🔴 [ConcurrentHashMap](data-structures/concurrent-hashmap.md)
+  - CopyOnWriteArrayList
+  - BlockingQueue
 
 - 🟠 Patterns
   - 📦 [Read/Write Lock](java-multithreading/readwritelock.md) ReadWriteLock - in-memory cache
   - 📦 [Barrier](java-multithreading/barrier.md) CyclicBarrier - multi-part file processing
   - 📦 [Fork/Join](java-multithreading/fork-join.md) - recursive file system processing
-
-- [JVM memory model](java-multithreading/java-memory-model.md)
 
 # Java Async
 
@@ -79,9 +110,13 @@
 - 🔴 [Normalization/Denormalization](database/database-normalization-guide.md)
 - [Materialized Views](database/materialized-views.md)
 
-- 🔴 📦 [ACID](database/acid.md)
-- 🔴 📦 [CAP Theorem](database/cap-theorem.md)
-- 📦 [BASE - NoSQL](database/base-principles.md)
+- Transactions
+  - 🔴 [Isolation levels](database/isolation-levels.md)
+  - 🔴 📗 [Spring Transactions Guide](database/spring-transactions-guide.md)
+  - 🔴 [Spring Transactions Propagation](database/spring-transaction-propagation.md)
+  - 🔴 📦 [ACID](database/acid.md)
+  - 🔴 📦 [CAP Theorem](database/cap-theorem.md)
+  - 📦 [BASE - NoSQL](database/base-principles.md)
 
 - 🔴 [Locking: Optimistic vs Pessimistic](database/locking-optimist-pessimist.md)
 - 🔴 [JPA Persistence](database/jpa-persistence.md)
@@ -102,18 +137,19 @@
   - 📗 [Composite Index Guide](database/composite-index-guide.md)
 - [ID generation](database/id-generation.md)
 - [Db Replication](database/db-replication.md) - solves READ scaling without splitting data
-- [Caching](database/caching.md) - reduces load on the database for hot reads
+- 🔴 [Caching](database/caching.md) - reduces load on the database for hot reads
   - [Cache Eviction](database/cache-eviction.md)
 - [Partitioning](database/partitioning.md) - solves query/maintenance pain within one instance
-- [Sharding](database/sharding.md) - splits a dataset across multiple independent database instances, each holding a subset of the overall data
+- [Sharding](database/sharding.md) - data split on multiple instances
 
 - 🟠 📗 [Slow Query Guide](database/slow-query-guide.md)
 
 # API
 
-- 🟠 [ ] [HTTP protocols](api/http-protocols.md)
+- 🟠 [HTTP protocols](api/http-protocols.md)
 
 - API Styles
+  - 🔴 [API](api/_api.md)
   - 🔴 [REST](api/rest.md)
   - [GraphQL](api/graphql.md)
   - [gRPC](api/grpc.md)
@@ -129,8 +165,11 @@
 
 # Testing
 
-- 🔴 [Unit Tests](test/test-unit.md) Mockito
-- 🔴 [Integration Tests](test/test-integration.md) Testcontainers
+- 🔴 [Unit Tests](test/test-unit.md)
+  - [JUnit](test/junit.md)
+  - [Mockito](test/mockito.md)
+- 🔴 [Integration Tests](test/test-integration.md)
+  - [Testcontainers](test/testcontainers.md)
 - [End-to-End Tests](test/test-e2e.md) Playwright
 - 🟠 [Performance Tests](test/test-performance.md) Gatling, K6
 - [BDD Tests](test/test-bdd.md) Cucumber
@@ -139,9 +178,15 @@
 - 📦 [Pattern: Service Integration Contract Test]
 - 📦 [Pattern: Service Component Test]
 
+- Code Quality
+  - 🎯 [Static Analysis](test/static-analysis.md)
+  - [Code Coverage: JaCoCo](test/jacoco.md)
+  - [SonarQube](test/sonarqube.md)
+
 # Design principles
 
 - 🔴 [Clean code](design-principles/clean-code.md)
+- 🔴 📗 [Java OOP Guide](design-principles/java-oop-guide.md)
 - 🔴 [SOLID Principles](design-principles/solid-principles.md)
 
 - 🔴 [Design Patterns - Behavior](design-principles/design-patterns-behavior.md)
@@ -161,8 +206,9 @@
 
 - [DNS](layer-edge/dns.md)
 - [CDN](layer-edge/cdn.md)
+- 📦 [API gateway](layer-edge/api-gateway.md)
 
-# Infrastructure Layer (Control Plane)
+# Infrastructure Layer
 
 - 📦 [Pattern: Server/Client-side discovery](layer-infrastructure/service-discovery.md)
 - 📦 [Pattern: Internal Secret Management](layer-infrastructure/internal-secret-management.md)
@@ -171,26 +217,47 @@
 
 - 🎯 [Observability](layer-infrastructure/observability.md)
   - [Logs](layer-infrastructure/logs.md) Loki
-  - 📦 [Distributed Logging](layer-infrastructure/distributed-logging.md) correlation ID + log aggregation
-  - [Audit Logging]
+    - [Log Types](layer-infrastructure/log-types.md)
+    - 📗 [API gateway logging guide](layer-infrastructure/api-gateway-logging-guide.md)
+    - 📦 [Distributed Logging](layer-infrastructure/distributed-logging.md) correlation ID + log aggregation
+    - [Audit Logging]
   - [Metrics](layer-infrastructure/metrics.md) Prometheus
-  - [Distributed Tracing](layer-infrastructure/distributed-tracing.md) Jaeger
+    - [Distributed Tracing](layer-infrastructure/distributed-tracing.md) Jaeger
   - [Alerting](layer-infrastructure/alerting.md) Prometheus + Grafana
   - [Exception tracking]
 
   - [Profiling](layer-infrastructure/profiling.md) JFR
+    - 🔴 [JVM Architecture](layer-infrastructure/jvm-architecture.md)
+    - 🔴 [JVM Heap vs Stack](layer-infrastructure/jvm-heap-stack.md)
     - 🔴 [Garbage Collection](layer-infrastructure/garbage-collection.md)
+    - 🔴 📗 [GC Guide](layer-infrastructure/java-gc-guide.md)
     - 🔴 📗 [GC Pause Guide](layer-infrastructure/java-gc-pause-guide.md)
     - 📗 [Tomcat Thread Pool Guide](layer-infrastructure/tomcat-thread-pool-guide.md)
     - 📗 [Java Heap Dump Guide](layer-infrastructure/java-heap-dump-guide.md)
     - 📗 [Memory Leaks Guide](layer-infrastructure/java-memory-leaks-guide.md)
 
-# Application Layer (Data Plane)
+- Infrastructure as Code
+  - [Terraform](layer-infrastructure/terraform.md)
+
+- Linux
+  - [Linux File System](layer-infrastructure/linux-file-system.md)
+
+# Application Layer
+
+- Spring
+  - 📗 [Spring Bean Scope guide](layer-application/spring-bean-scope-guide.md)
 
 # Data Layer
 
 - Data
   - 📦 [Database per Service](microservices/database-per-service.md)
+
+- Processing
+  - 🎯 [Batch Processing](processing/batch-processing.md) Spring Batch, Spark
+  - 🎯 [Data Streaming](processing/data-streaming.md) Kafka Streams
+  - [Big Data](processing/big-data.md) Hadoop
+  - 📗 [Serialization Guide](processing/serialization-guide.md)
+  - 📗 [Serialization Avro Guide](processing/avro-guide.md)
 
 - Messaging
   - 🔴 🎯 [Messaging](processing/_messaging.md)
@@ -215,25 +282,18 @@
 
   - [Remote Procedure Invocation]
 
-## Processing
-
-- 🎯 [Batch Processing](processing/batch-processing.md) Spring Batch, Spark
-- 🎯 [Data Streaming](processing/data-streaming.md) Kafka Streams
-- [Big Data](processing/big-data.md) Hadoop
-- 📗 [Serialization Guide](processing/serialization_guide.md)
-- 📗 [Serialization Avro Guide](processing/avro_guide.md)
-
 # Security
 
 - 🔴 🎯 [Security](security/security.md) OIDC, Oauth2, JWT
   - [Authentication](security/authentication.md)
   - [Encryption](security/encryption.md) Symmetric vs Asymmetric
   - [SSL/TLS, HTTPS](security/ssl-tls-https.md)
-  - [Access Token](microservices/access-token.md)
-  - [Session Management](microservices/session-management.md)
+  - [Access Token](security/access-token.md)
+  - [Session Management](security/session-management.md)
+  - [Session Management Guide](security/session-context-management-guide.md)
 
-- 📦 [API gateway](microservices/api-gateway.md)
 - 🔴 [Spring Security](security/spring-security.md)
+- [Password Storage Guide](security/password-storage-guide.md)
 
 # Microservices
 
@@ -258,19 +318,22 @@
   - [Load Shedding vs. Rate Limiting](microservices/load-shed-vs-rate-limit.md)
   - 📦 [Load Shedding](microservices/load-shedding.md) reject requests based on the service's own real-time health
   - 📦 [Rate Limiter / Time Limiter / Bulkhead](microservices/rate-time-limiter.md) cap volume / duration / concurrent capacity
-  - 📦 [Health check API](microservices/healthcheck_api.md)
+  - 📦 [Health check API](microservices/healthcheck-api.md)
 
 - Deployment
   - [Single Service per Host]
   - [Multiple Services per Host]
 
-- UI
+# UI
+
+- [ReactJs](react/react.md)
   - [Server-side page fragment composition]
   - [Client-side UI composition]
 
 # Cloud
 
 - [Cloud Providers](cloud/cloud-providers.md)
+- [AWS Microservices](cloud/aws-microservices.md)
 
 # DevOps and CI/CD
 

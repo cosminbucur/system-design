@@ -1,3 +1,7 @@
+# Source of logs
+
+![alt text](stdout-stderr.png)
+
 stdin - 0
 stdout - 1
 sterr - 2
