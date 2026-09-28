@@ -25,13 +25,9 @@
 
 # microservices
 
-- API thorttling vs rate limiting
-  - token bucket
-
 # security
 
 - sticky sessions
-- PCKE (pixie)
 - passkeys (passwordless authentication)
   - Storage: Website stores the public key in its database.
   - Unlocking: User device holds the private key, unlocked locally via biometrics.
@@ -44,8 +40,6 @@
 - default methods (interfaces) - backward compatibility, not forcing implementation of a new method
 
 # logs
-
-- stdout vs stderr
 
 # system design
 

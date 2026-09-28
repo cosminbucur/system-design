@@ -39,10 +39,10 @@
   - 🔴 📦 [Linked List](algorithms/linked-list.md)
 
 - Non Linear
-  - 📦 [Trees](algorithms/trees.md)
+  - 🔴 📦 [Trees](algorithms/trees.md)
   - 📦 [Tries](algorithms/tries.md)
   - 📦 [Heap](algorithms/heap.md)
-  - 📦 [Queue](algorithms/queue.md) - music player, printer
+  - 🔴 📦 [Queue](algorithms/queue.md) - music player, printer
     - [Priority Queue](algorithms/queue-priority.md) - airport
     - [Circular Queue](algorithms/queue-circular.md) - load balancing
     - [Deque](algorithms/queue-deque.md) - browser history
@@ -290,6 +290,7 @@
   - 🔴 [Authentication](security/authentication.md)
   - [Encryption](security/encryption.md) Symmetric vs Asymmetric
   - [SSL/TLS, HTTPS](security/ssl-tls-https.md)
+  - [PKCS Public-Key Cryptography Standards](security/pkcs.md)
   - [Access Token](security/access-token.md)
   - [Session Management](security/session-management.md)
   - [Session Management Guide](security/session-context-management-guide.md)
@@ -314,13 +315,14 @@
 - 📦 [Circuit Breaker](resilience/circuit-breaker.md) stops calling something that's clearly broken - Resilience4j
 
 - Downstream
-  - 📦 [Timeout](microservices/timeout.md)
-  - 📦 [Retry/Fallback](microservices/retry-fallback.md) handle recovery
+  - 📦 [Timeout](resilience/timeout.md)
+  - 📦 [Retry/Fallback](resilience/retry-fallback.md) handle recovery
 - Upstream
-  - [Load Shedding vs. Rate Limiting](microservices/load-shed-vs-rate-limit.md)
-  - 📦 [Load Shedding](microservices/load-shedding.md) reject requests based on the service's own real-time health
-  - 📦 [Rate Limiter / Time Limiter / Bulkhead](microservices/rate-time-limiter.md) cap volume / duration / concurrent capacity
-  - 📦 [Health check API](microservices/healthcheck-api.md)
+  - [Load Shedding vs. Rate Limiting](resilience/load-shed-vs-rate-limit.md)
+  - 📦 [Load Shedding](resilience/load-shedding.md) reject requests based on the service's own real-time health
+  - 📦 [Rate Limiter / Time Limiter / Bulkhead](resilience/rate-time-limiter.md) cap volume / duration / concurrent capacity
+  - [API Throttling](resilience/api-throttling.md)
+  - 📦 [Health check API](resilience/healthcheck-api.md)
 
 - Deployment
   - [Single Service per Host]

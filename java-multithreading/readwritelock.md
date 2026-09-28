@@ -2,14 +2,16 @@
 
 A `ReentrantReadWriteLock` (part of `java.util.concurrent.locks`) enables concurrent shared access for multiple reader threads while ensuring exclusive access for writer threads.
 
+https://www.youtube.com/watch?v=7VqWkc9o7RM
+
 ---
 
 ## 1. Core Mechanics & State Representation
 
 The lock manages state using a single 32-bit `int` inside **AbstractQueuedSynchronizer (AQS)**:
 
-* **High 16 bits:** Shared read lock count.
-* **Low 16 bits:** Exclusive write lock hold count.
+- **High 16 bits:** Shared read lock count.
+- **Low 16 bits:** Exclusive write lock hold count.
 
 ```
  32-bit AQS state integer:
@@ -21,8 +23,9 @@ The lock manages state using a single 32-bit `int` inside **AbstractQueuedSynchr
 ```
 
 ### State Bitwise Operations
-* **Read Count:** `state >>> 16`
-* **Write Count:** `state & 0x0000FFFF`
+
+- **Read Count:** `state >>> 16`
+- **Write Count:** `state & 0x0000FFFF`
 
 ---
 
@@ -89,9 +92,9 @@ The lock manages state using a single 32-bit `int` inside **AbstractQueuedSynchr
 
 ## 3. Key Rules & Behavioral Properties
 
-* **Lock Downgrading:** Supported. A thread holding a write lock can acquire a read lock, and then release its write lock, safely preserving read access.
-* **Lock Upgrading:** **Not supported.** A thread holding a read lock cannot directly acquire a write lock. Attempting this across multiple threads causes instant deadlocks.
-* **Thread Tracking:** While total read counts are stored in AQS, Java utilizes `ThreadLocalHoldCounter` to keep track of per-thread reentrant read counts.
+- **Lock Downgrading:** Supported. A thread holding a write lock can acquire a read lock, and then release its write lock, safely preserving read access.
+- **Lock Upgrading:** **Not supported.** A thread holding a read lock cannot directly acquire a write lock. Attempting this across multiple threads causes instant deadlocks.
+- **Thread Tracking:** While total read counts are stored in AQS, Java utilizes `ThreadLocalHoldCounter` to keep track of per-thread reentrant read counts.
 
 ---
 
@@ -147,8 +150,8 @@ public class FeatureToggleService {
 
 ## 5. When to Use vs. Alternatives
 
-| Mechanism | Ideal Use Case | Pros | Cons |
-| :--- | :--- | :--- | :--- |
-| **`ReentrantReadWriteLock`** | Read-heavy workloads ($>90\%$ reads) with longer critical sections. | Shared concurrent reads; reentrant; simple model. | Overhead of state management and ThreadLocals. |
-| **`ConcurrentHashMap`** | Key-value read/write access. | Extremely fast bucket-level concurrency. | Cannot lock across complex bulk structures atomically without extra logic. |
-| **`StampedLock`** | Read-dominated workloads requiring high performance (Java 8+). | Provides optimistic reading without CAS overhead. | Non-reentrant; usage complexity. |
+| Mechanism                    | Ideal Use Case                                                      | Pros                                              | Cons                                                                       |
+| :--------------------------- | :------------------------------------------------------------------ | :------------------------------------------------ | :------------------------------------------------------------------------- |
+| **`ReentrantReadWriteLock`** | Read-heavy workloads ($>90\%$ reads) with longer critical sections. | Shared concurrent reads; reentrant; simple model. | Overhead of state management and ThreadLocals.                             |
+| **`ConcurrentHashMap`**      | Key-value read/write access.                                        | Extremely fast bucket-level concurrency.          | Cannot lock across complex bulk structures atomically without extra logic. |
+| **`StampedLock`**            | Read-dominated workloads requiring high performance (Java 8+).      | Provides optimistic reading without CAS overhead. | Non-reentrant; usage complexity.                                           |

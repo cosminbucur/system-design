@@ -1,5 +1,7 @@
 # Understanding How Java's `ReentrantLock` Works
 
+https://www.youtube.com/watch?v=ahBC69_iyk4
+
 `ReentrantLock` (from `java.util.concurrent.locks`) is an explicit lock implementation in Java that provides advanced thread synchronization capabilities beyond traditional `synchronized` blocks.
 
 ---
