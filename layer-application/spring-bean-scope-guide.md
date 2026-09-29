@@ -120,6 +120,10 @@ With prototype scope, Spring creates a new instance every time the bean is reque
 
 ### Example
 
+Imagine a system where administrators can request large data exports (e.g., generating a PDF of yearly transaction histories). Because these reports take time, the system processes them in the background using a multi-threaded ExecutorService.
+
+If your ReportExporter bean is a default singleton, multiple administrators running exports at the same time will overwrite each other's data fields (like currentUserId, totalRecordsProcessed, or the specific OutputStream), causing corrupted files and major data leaks.
+
 ```java
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
@@ -144,6 +148,28 @@ public class ShoppingCart {
 ### Using Prototype Bean
 
 ```java
+@Component
+@Scope("prototype")
+public class ReportExporter implements Runnable {
+
+    // Stateful data unique to THIS specific export job
+    private final String userId;
+    private final ExportQueryCriteria criteria;
+    private int progressPercentage = 0;
+
+    public ReportExporter(String userId, ExportQueryCriteria criteria) {
+        this.userId = userId;
+        this.criteria = criteria;
+    }
+
+    @Override
+    public void run() {
+        // 1. Fetch data based on criteria
+        // 2. Generate PDF bytes
+        // 3. Update progressPercentage safely without affecting other users
+    }
+}
+
 @Service
 public class OrderService {
 
