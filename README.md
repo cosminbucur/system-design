@@ -248,7 +248,7 @@
 
 # Application Layer
 
-- Spring
+- 🎯 [Spring Framework](api/spring.md)
   - 📗 [Spring Bean Scope guide](layer-application/spring-bean-scope-guide.md)
 
 # Data Layer
@@ -299,6 +299,7 @@
 
 - 🔴 [Spring Security](security/spring-security.md)
 - [Password Storage Guide](security/password-storage-guide.md)
+- [CORS](security/cors.md)
 
 # Microservices
 
