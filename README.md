@@ -3,7 +3,7 @@
 - [Live Page](https://cosminbucur.github.io/system-design/)
 
 - 🔴 🎯 [System Design](system-design.md)
-- 📗 [API performance Guide](api-performance-guide.md)
+- 🔴 📗 [DDD Structure](ddd-structure.md)
 - [Multi Tenant Core Banking](multi-tenant-core-banking.md)
 
 # Java
@@ -100,15 +100,17 @@
 - 🟠 🎯 [Async Programming](java-async/async-programming.md)
 - 📦 [Future and Promise](java-async/future-and-promise.md) CompletableFutures
 - [Virtual Threads](java-async/virtual-threads.md)
-- [NIO - Non-Blocking IO](java-async/nio.md)
+- 🆕 📗[Webflux to Virtual Threads](java-async/webflux-to-virtual-threads.md)
+- 🆕 📗 [Java Networking Guide](java-async/java-networking-guide.md)
+- 🟠 [NIO - Non-Blocking IO](java-async/nio.md) channels and selectors
 
 # Java Reactive
 
-- 🎯 [Reactive Programming](java-reactive/reactive-programming.md) Reactor
+- 🎯 [Reactive Programming](java-reactive/reactive-programming.md) Reactor - Webflux
 
 # Database
 
-- 🔴 [Databases](database/_databases.md)
+- 🔴 [RDBS Databases](database/_databases.md)
 - 🔴 [Normalization/Denormalization](database/database-normalization-guide.md)
 - [Materialized Views](database/materialized-views.md)
 
@@ -118,12 +120,19 @@
   - 🔴 [Spring Transactions Propagation](database/spring-transaction-propagation.md)
   - 🔴 📦 [ACID](database/acid.md)
   - 🔴 📦 [CAP Theorem](database/cap-theorem.md)
-  - 📦 [BASE - NoSQL](database/base-principles.md)
 
 - 🔴 [Locking: Optimistic vs Pessimistic](database/locking-optimist-pessimist.md)
-- 🔴 [JPA Persistence](database/jpa-persistence.md)
-- 🔴 [Hibernate cache](database/hibernate-cache.md)
+
 - [JDBI](database/jdbi.md)
+
+- 🔴 [JPA Persistence](database/jpa-persistence.md)
+  - 🆕 🔴 [Entities](database/entities.md)
+  - 🆕 [Entities (Lombok)](database/entities-lombok.md)
+- 🆕 [Spring Data](database/spring-data.md)
+- 🆕 📗[Spring Data Auditing Guide](database/spring-data-auditing-guide.md)
+- 🆕 [Hibernate](database/hibernate.md)
+  - [Hibernate cache](database/hibernate-cache.md)
+
 - 🔴 [Pagination](database/pagination.md)
 - [Cursor Pagination](database/pagination-cursor.md)
 
@@ -132,15 +141,26 @@
 - 📗 [HikariCP Guide](database/hikaricp-guide.md)
 - 📗 [Lock Contention Guide](database/lock-contention-guide.md)
 
+- 🆕 📗 [Variable Names Conventions](database/conventions-variable-name.md)
+
+- 🆕 [NoSQL](database/nosql.md)
+  - 📦 [BASE - NoSQL](database/base-principles.md)
+  - 🆕 [Cassandra](database/cassandra.md) - real-time streams
+
+- 🆕 📗 [Large File Storage](database/large-file-storage.md)
+
 # Database Scaling
 
 - [DB Scaling](database/database-scaling.md)
 - [Db Indexing](database/db-indexing.md)
-  - 📗 [Composite Index Guide](database/composite-index-guide.md)
-- [ID generation](database/id-generation.md)
+  - 🆕 📗 [Database Keys Guide](database/database-keys-guide.md)
+  - 🆕 📗 [Composite Index Guide](database/composite-index-guide.md)
+- 🔴 [ID generation](database/id-generation.md)
+- 🔴 [ID generation strategy](database/jpa-id-gen-strategy.md)
 - [Db Replication](database/db-replication.md) - solves READ scaling without splitting data
 - 🔴 [Caching](database/caching.md) - reduces load on the database for hot reads
   - [Cache Eviction](database/cache-eviction.md)
+  - 🆕 [Spring Cache](database/spring-cache.md)
 - [Partitioning](database/partitioning.md) - solves query/maintenance pain within one instance
 - [Sharding](database/sharding.md) - data split on multiple instances
 
@@ -153,18 +173,29 @@
 - API Styles
   - 🔴 [API](api/_api.md)
   - 🔴 [REST](api/rest.md)
-  - [GraphQL](api/graphql.md)
   - [gRPC](api/grpc.md)
+    - 🆕 [Protobuf](api/protobuf.md)
+  - [GraphQL](api/graphql.md)
   - [Websockets](api/websockets.md)
 
-  - 🟠 [Validation](validation.md)
+- API Design
+  - 🆕 🔴 [OpenAPI](openapi.md)
+  - 🟠 [Validation](api/validation.md)
   - 🟠 [Error Handling](api/error-handling.md)
   - 🔴 [API idempotency](api/api-idempotency.md)
   - 🔴 [Deduplication](api/deduplication.md)
-  - [API latency tiers](api/api_latency_tiers.md)
+  - [API latency tiers](api/api-latency-tiers.md)
+  - 🔴 📗 [API performance Guide](api/api-performance-guide.md)
+
+  - 🆕 [Rest Client](api/spring-rest-client.md)
+  - 🆕 [Custom Rest Client](api/custom-rest-client.md)
 
 - API integration patterns
   - [Webhooks](api/webhooks.md)
+
+- 🆕 [Web Servers](api/web-servers.md)
+  - 🆕 🟠 📗 [Tomcat Guide](api/tomcat-guide.md)
+  - 🆕 📗 [Jetty Guide](api/jetty-guide.md)
 
 # Testing
 
@@ -227,7 +258,7 @@
   - [Metrics](layer-infrastructure/metrics.md)
     - [Prometheus](layer-infrastructure/prometheus.md)
     - [Distributed Tracing](layer-infrastructure/distributed-tracing.md) Jaeger
-  - [Alerting](layer-infrastructure/alerting.md) Prometheus + Grafana
+  - [Alert as Code](layer-infrastructure/alerting.md) Prometheus + Grafana
   - [Exception tracking]
 
   - [Profiling](layer-infrastructure/profiling.md) JFR
@@ -249,7 +280,8 @@
 # Application Layer
 
 - 🎯 [Spring Framework](api/spring.md)
-  - 📗 [Spring Bean Scope guide](layer-application/spring-bean-scope-guide.md)
+  - 🔴 📗 [Spring Bean Scope guide](layer-application/spring-bean-scope-guide.md)
+  - 🆕 🔴 [Spring AOP](layer-application/spring-aop.md)
 
 # Data Layer
 
@@ -257,17 +289,25 @@
   - 📦 [Database per Service](microservices/database-per-service.md)
 
 - Processing
-  - 🎯 [Batch Processing](processing/batch-processing.md) Spring Batch, Spark
+  - 🎯 [Batch Processing](processing/batch-processing.md) Spring Batch
+    - 🆕 [Spring Batch](processing/spring-batch.md)
   - 🎯 [Data Streaming](processing/data-streaming.md) Kafka Streams
-  - [Big Data](processing/big-data.md) Hadoop
-  - 📗 [Serialization Guide](processing/serialization-guide.md)
+  - 🆕 [Big Data Concepts](processing/big-data-concepts.md)
+  - 🎯 [Big Data](processing/big-data.md)
+    - Hadoop - data lake (historical data)
+    - Spark - analytical engine
+    - Hive
+  - 🔴 📗 [Serialization Guide](processing/serialization-guide.md)
   - 📗 [Serialization Avro Guide](processing/avro-guide.md)
+  - 📗 [Video Streaming](processing/video-streaming.md)
 
 - Messaging
   - 🔴 🎯 [Messaging](processing/_messaging.md)
+  - 🆕 [Messaging Protocols](processing/messaging-protocols.md)
   - 🔴 📦 [Pub/Sub](processing/pub-sub.md)
   - 🔴 📦 [Message Queues](processing/message-queues.md)
   - [Backpressure](processing/backpressure.md)
+  - 🆕 [Notification types](processing/notification-types.md)
 
 - Transactional Messaging
   - 📦 [Transactional Outbox](microservices/transactional-outbox.md)
@@ -298,7 +338,7 @@
   - [Session Management Guide](security/session-context-management-guide.md)
 
 - 🔴 [Spring Security](security/spring-security.md)
-- [Password Storage Guide](security/password-storage-guide.md)
+- 🆕 📗 [Password Storage Guide](security/password-storage-guide.md)
 - [CORS](security/cors.md)
 
 # Microservices
@@ -347,10 +387,16 @@
 - [CI/CD](devops/ci-cd.md)
 - [Continous Deployment](devops/continuous-deployment.md)
 - [CI/CD Pipeline Guide](devops/ci-cd-pipeline-guide.md)
+- 🆕 [Github](devops/github.md)
 
 - [Containers](devops/docker.md) Docker
 - [Orchestration](devops/kubernetes.md) Kubernetes
+  - [Helm](devops/helm.md)
 - [GitOps](devops/gitops.md) ArgoCD
+- 🆕 [IaC (Infrastructure as Code)](devops/terraform.md)
+
+- 🆕 [Maven](devops/maven.md)
+- 🆕 [Gradle](devops/gradle.md)
 
 # Multi tenancy
 
@@ -363,3 +409,4 @@
 🟠 Nice to have
 🎯 Topic
 📗 Guide
+🆕 Recently added
