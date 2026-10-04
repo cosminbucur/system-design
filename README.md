@@ -20,8 +20,24 @@
 
 - 🔴 [Collections](data-structures/collections.md)
 - 🔴 [Java List Implementations](data-structures/java-list.md)
+  - ArrayList
+  - LinkedList
+  - TreeList
 - 🔴 [Java Map Implementations](data-structures/java-map.md)
+  - HashMap
+  - LinkedHashMap
+  - TreeMap
 - 🔴 [Java Set Implementations](data-structures/java-set.md)
+  - HashSet
+  - LinkedHashSet
+  - TreeSet
+
+- Thread-safe
+  - 🔴 [ConcurrentHashMap](data-structures/concurrent-hashmap.md)
+  - 🆕 🔴 [CopyOnWriteArrayList](data-structures/copyonwritearraylist.md)
+  - 🆕 [Blocking /Non-Blocking Queue](algorithms/queue-blocking.md)
+    - Blocking (ArrayBlockingQueue)
+    - Non-Blocking (ConcurrentLinkedQueue)
 
 # Algorithms
 
@@ -47,10 +63,9 @@
   - 📦 [Tries](algorithms/tries.md)
   - 📦 [Heap](algorithms/heap.md)
   - 🔴 📦 [Queue](algorithms/queue.md) - music player, printer
-    - [Priority Queue](algorithms/queue-priority.md) - airport
-    - [Circular Queue](algorithms/queue-circular.md) - load balancing
-    - [Deque](algorithms/queue-deque.md) - browser history
-    - [Blocking/Non-Blocking Queue](algorithms/queue-blocking.md)
+    - [PriorityQueue](algorithms/queue-priority.md) - airport
+    - [CircularQueue](algorithms/queue-circular.md) - load balancing
+    - [Deque - ArrayDequeue](algorithms/queue-deque.md) - browser history
   - [Intervals](algorithms/intervals.md)
 
 - Paradigms
@@ -62,68 +77,73 @@
   - [Bit-manipulation](algorithms/bit-manipulation.md)
   - [Math-geometry](algorithms/math-geometry.md)
 
-# Java Multithreading
+# Java Multithreading & Concurrency
 
-- [I/O vs CPU Bound](java-multithreading/io-cpu-bound.md)
-- [Concurrency vs Parallelism](java-multithreading/concurrency.md)
+- Fundamentals
+  - [I/O vs CPU Bound](java-multithreading/io-cpu-bound.md)
+  - [Concurrency vs Parallelism](java-multithreading/concurrency.md)
+  - 🔴 🎯 [Multithreading](java-multithreading/_multithreading.md) ExecutorService
 
-- 🔴 🎯 [Multithreading](java-multithreading/_multithreading.md) ExecutorService
-- 🔴 📗 [Thread Safety Guide](java-multithreading/thread-safety-guide.md)
-- 🔴 📗 [Immutability Guide](java-multithreading/java-immutability-guide.md)
-
-- 🔴 [ThreadLocal vs ScopedValue](java-multithreading/threadlocal-scopedvalue.md)
+- Thread Safety
+  - 🔴 📗 [Thread Safety Guide](java-multithreading/thread-safety-guide.md)
+  - 🔴 📗 [Immutability Guide](java-multithreading/java-immutability-guide.md)
+  - 🔴 [ThreadLocal](java-multithreading/threadlocal.md)
 
 - 🔴 Synchronization mechanisms
-  - Low-level keywords
+  - Low-level primitives
     - [synchronized](java-multithreading/synchronized-deadlock.md)
     - 🔴 [Volatile vs Atomic Classes](java-multithreading/volatile-atomic.md)
   - Explicit locks
-    - 🔴 [ReentrantLock](java-multithreading/reentrantlock.md)
-    - ReentrantReadWriteLock
-    - StampedLock
-  - [High-level thread synchronizers](java-multithreading/thread-synchronizers-guide.md)
-    - CountDownLatch
-    - CyclicBarrier
-    - Semaphore
-    - Phaser
+    - 🔴 [ReentrantLock](java-multithreading/lock-reentrant.md)
+    - 📦 [ReadWriteLock](java-multithreading/lock-readwrite.md) - in-memory cache
+    - 🆕 [ReentrantReadWriteLock](java-multithreading/lock-reentrantreadwrite.md) - in-memory cache
+    - 🆕 [StampedLock](java-multithreading/lock-reentrantreadwrite.md) - in-memory cache (read)
+  - High-level thread synchronizers
+    - 📗 [Thread Synchronizers Guide](java-multithreading/thread-synchronizers-guide.md)
+    - 🆕 [CountDownLatch](java-multithreading/countdownlatch.md) - matchmaking MMO
+    - 🆕 📦 [CyclicBarrier](java-multithreading/barrier.md) - multi-part file processing
+    - 🆕 📦 [Phaser](java-multithreading/phaser.md) - multi-stage simulation
+    - 🆕 📦 [Semaphore](java-multithreading/semaphore.md) - rate limit/throtting, db connection pools
 
-- Thread-safe collections
-  - 🔴 [ConcurrentHashMap](data-structures/concurrent-hashmap.md)
-  - CopyOnWriteArrayList
-  - BlockingQueue
-
-- 🟠 Patterns
-  - 📦 [Read/Write Lock](java-multithreading/readwritelock.md) ReadWriteLock - in-memory cache
-  - 📦 [Barrier](java-multithreading/barrier.md) CyclicBarrier - multi-part file processing
+- CPU-Bound Parallelism
   - 📦 [Fork/Join](java-multithreading/fork-join.md) - recursive file system processing
 
-# Java Async
+# Java I/O
+
+- 🆕 [NIO.2](java-io/nio2.md) - path and file
+- 🟠 [NIO - Non-Blocking IO](java-io/nio.md) - buffer, channels and selectors
+- 🆕 📗 [Java Networking Guide](java-iio/java-networking-guide.md)
+
+# Java Asynchronous
 
 - 🟠 🎯 [Async Programming](java-async/async-programming.md)
 - 📦 [Future and Promise](java-async/future-and-promise.md) CompletableFutures
 - [Virtual Threads](java-async/virtual-threads.md)
+- 🆕 [Scoped Value](java-async/scopedvalue.md)
 - 🆕 📗[Webflux to Virtual Threads](java-async/webflux-to-virtual-threads.md)
-- 🆕 📗 [Java Networking Guide](java-async/java-networking-guide.md)
-- 🟠 [NIO - Non-Blocking IO](java-async/nio.md) channels and selectors
 
 # Java Reactive
 
 - 🎯 [Reactive Programming](java-reactive/reactive-programming.md) Reactor - Webflux
 
-# Database
+# Persistence
 
-- 🔴 [RDBS Databases](database/_databases.md)
-- 🔴 [Normalization/Denormalization](database/database-normalization-guide.md)
-- [Materialized Views](database/materialized-views.md)
+- SQL
 
-- Transactions
-  - 🔴 [Isolation levels](database/isolation-levels.md)
-  - 🔴 📗 [Spring Transactions Guide](database/spring-transactions-guide.md)
-  - 🔴 [Spring Transactions Propagation](database/spring-transaction-propagation.md)
-  - 🔴 📦 [ACID](database/acid.md)
-  - 🔴 📦 [CAP Theorem](database/cap-theorem.md)
+- Relational Databases
+  - 🔴 [RDBS Databases](database/_databases.md)
+  - 🔴 [Normalization/Denormalization](database/database-normalization-guide.md)
+  - [Materialized Views](database/materialized-views.md)
 
-- 🔴 [Locking: Optimistic vs Pessimistic](database/locking-optimist-pessimist.md)
+  - Transactions
+    - 🔴 [Isolation levels](database/isolation-levels.md)
+    - 🔴 📗 [Spring Transactions Guide](database/spring-transactions-guide.md)
+    - 🔴 [Spring Transactions Propagation](database/spring-transaction-propagation.md)
+    - 🔴 📦 [ACID](database/acid.md)
+    - 🔴 📦 [CAP Theorem](database/cap-theorem.md)
+
+  - 🔴 [Locking: Optimistic vs Pessimistic](database/locking-optimist-pessimist.md)
+  - 📗 [Lock Contention Guide](database/lock-contention-guide.md)
 
 - [JDBI](database/jdbi.md)
 
@@ -132,26 +152,27 @@
     - 🆕 🔴 [Entities](database/entities.md)
     - 🆕 [Entities (Lombok)](database/entities-lombok.md)
   - 🆕 [Spring Data](database/spring-data.md)
-  - 🆕 📗[Spring Data Auditing Guide](database/spring-data-auditing-guide.md)
   - 🆕 [Hibernate](database/hibernate.md)
     - [Hibernate cache](database/hibernate-cache.md)
 
 - 🔴 [Pagination](database/pagination.md)
-- [Cursor Pagination](database/pagination-cursor.md)
+  - [Cursor Pagination](database/pagination-cursor.md)
 
 - [DB migration](database/db-migration.md)
 - [Audit](database/auditing.md)
-- 📗 [HikariCP Guide](database/hikaricp-guide.md)
-- [HikariCP Properties](database/hikaricp-properties.md)
-- 📗 [Lock Contention Guide](database/lock-contention-guide.md)
+- 🆕 📗[Spring Data Auditing Guide](database/spring-data-auditing-guide.md)
 
-- 🆕 📗 [Variable Names Conventions](database/conventions-variable-name.md)
+- Connection Pools
+  - 📗 [HikariCP Guide](database/hikaricp-guide.md)
+  - [HikariCP Properties](database/hikaricp-properties.md)
 
-- 🆕 [NoSQL](database/nosql.md)
-  - 📦 [BASE - NoSQL](database/base-principles.md)
-  - 🆕 [Cassandra](database/cassandra.md) - real-time streams
+- Non Relational Databases
+  - 🆕 [NoSQL](database/nosql.md)
+    - 📦 [BASE - NoSQL](database/base-principles.md)
+    - 🆕 [Cassandra](database/cassandra.md) - real-time streams
 
-- 🆕 📗 [Large File Storage](database/large-file-storage.md)
+- Storage
+  - 🆕 📗 [Large File Storage](database/large-file-storage.md)
 
 # Database Scaling
 
@@ -193,6 +214,7 @@
 
   - 🆕 [Rest Client](api/spring-rest-client.md)
   - 🆕 [Custom Rest Client](api/custom-rest-client.md)
+  - 🆕 [Sring Cloud Open Feign](layer-infrastructure/openfeign.md)
 
 - API integration patterns
   - [Webhooks](api/webhooks.md)
@@ -224,6 +246,7 @@
 # Design principles
 
 - 🔴 [Clean code](design-principles/clean-code.md)
+  - 🆕 📗 [Variable Names Conventions](database/conventions-variable-name.md)
 - 🔴 📗 [Java OOP Guide](design-principles/java-oop-guide.md)
 - 🔴 [SOLID Principles](design-principles/solid-principles.md)
 
@@ -249,8 +272,10 @@
 # Infrastructure Layer
 
 - 📦 [Pattern: Server/Client-side discovery](layer-infrastructure/service-discovery.md)
+  - 🆕 [Spring Cloud Eureka](layer-infrastructure/eureka.md)
 - 📦 [Pattern: Internal Secret Management](layer-infrastructure/internal-secret-management.md)
 - 📦 [Pattern: Externalized Configuration](layer-infrastructure/externalized-configuration.md)
+  - 🆕 [Spring Cloud Config](layer-infrastructure/spring-cloud-config.md)
 - [Microservice Chassis]
 
 - 🎯 [Observability](layer-infrastructure/observability.md)
@@ -262,6 +287,7 @@
   - [Metrics](layer-infrastructure/metrics.md)
     - [Prometheus](layer-infrastructure/prometheus.md)
     - [Distributed Tracing](layer-infrastructure/distributed-tracing.md) Jaeger
+      - 🆕 [Spring Sleuth](layer-infrastructure/sleuth.md)
   - [Alert as Code](layer-infrastructure/alerting.md) Prometheus + Grafana
   - [Exception tracking]
 
@@ -354,12 +380,11 @@
   - 📦 [Decompose by business capability](microservices/decompose-by-capability.md)
   - 📦 [Decompose by subdomain](microservices/decompose-by-subdomain.md)
 
-- 🔴 [Spring Cloud](microservices/spring-cloud.md)
-
-# Resilience
+# 🔴 Resilience
 
 - 📦 [Load Balancing](resilience/load-balancing.md)
 - 📦 [Circuit Breaker](resilience/circuit-breaker.md) stops calling something that's clearly broken - Resilience4j
+  - 🆕 [Spring Hystrix](microservices/hystrix.md) - circuit breaker
 
 - Downstream
   - 📦 [Timeout](resilience/timeout.md)
@@ -386,13 +411,15 @@
 - [Cloud Providers](cloud/cloud-providers.md)
 - [AWS Microservices](cloud/aws-microservices.md)
 
+- 🔴 [Spring Cloud](microservices/spring-cloud.md)
+
 # DevOps and CI/CD
 
 - Build Tools
   - 🆕 [Gradle](devops/gradle.md)
   - 🆕 [Maven](devops/maven.md)
 
-- [CI/CD](devops/ci-cd.md)
+- 🔴 [CI/CD](devops/ci-cd.md)
   - [Continous Deployment](devops/continuous-deployment.md)
   - [CI/CD Pipeline Guide](devops/ci-cd-pipeline-guide.md)
   - 🆕 [Github](devops/github.md)
@@ -400,8 +427,10 @@
 - [Containers](devops/docker.md) Docker
 - [Orchestration](devops/kubernetes.md) Kubernetes
   - [Helm](devops/helm.md)
-- [GitOps](devops/gitops.md) ArgoCD
-- 🆕 [IaC (Infrastructure as Code)](devops/terraform.md)
+- GitOps
+  - [GitOps](devops/gitops.md) ArgoCD
+- IaC (Infrastructure as Code)
+  - 🆕 [Terraform](devops/terraform.md)
 
 # AI
 
