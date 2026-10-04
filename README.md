@@ -142,6 +142,7 @@
 - [DB migration](database/db-migration.md)
 - [Audit](database/auditing.md)
 - 📗 [HikariCP Guide](database/hikaricp-guide.md)
+- [HikariCP Properties](database/hikaricp-properties.md)
 - 📗 [Lock Contention Guide](database/lock-contention-guide.md)
 
 - 🆕 📗 [Variable Names Conventions](database/conventions-variable-name.md)
