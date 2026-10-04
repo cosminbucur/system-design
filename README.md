@@ -212,6 +212,7 @@
   - [API latency tiers](api/api-latency-tiers.md)
   - 🔴 📗 [API performance Guide](api/api-performance-guide.md)
 
+- External Communication
   - 🆕 [Rest Client](api/spring-rest-client.md)
   - 🆕 [Custom Rest Client](api/custom-rest-client.md)
   - 🆕 [Sring Cloud Open Feign](layer-infrastructure/openfeign.md)
@@ -228,6 +229,7 @@
 - 🔴 [Unit Tests](test/test-unit.md)
   - [JUnit](test/junit.md)
   - [Mockito](test/mockito.md)
+    - [Spy vs Mock](test/spy-vs-mock.md)
 - 🔴 [Integration Tests](test/test-integration.md)
   - [Testcontainers](test/testcontainers.md)
 - [End-to-End Tests](test/test-e2e.md) Playwright
@@ -359,16 +361,27 @@
 # Security
 
 - 🔴 🎯 [Security](security/security.md) OIDC, Oauth2, JWT
-  - 🔴 [Authentication](security/authentication.md)
+
+- 🔴 [Authentication](security/authentication.md)
+  - Stateless
+    - 🆕 [SSO (Single Sign On)](security/sso.md)
+    - OIDC
+    - [Access Token](security/access-token.md)
+    - 🆕 [Passkey Auth](security/passkey-authentication.md)
+  - Session
+    - [Session Management](security/session-management.md)
+    - 📗 [Session Management Guide](security/session-context-management-guide.md)
+
+- 🆕 🔴 [Authorization](security/authorization.md)
+  - OAuth2
+
+- Encryption
   - [Encryption](security/encryption.md) Symmetric vs Asymmetric
   - [SSL/TLS, HTTPS](security/ssl-tls-https.md)
   - [PKCS Public-Key Cryptography Standards](security/pkcs.md)
-  - [Access Token](security/access-token.md)
-  - [Session Management](security/session-management.md)
-  - [Session Management Guide](security/session-context-management-guide.md)
+  - 🆕 📗 [Password Storage Guide](security/password-storage-guide.md)
 
 - 🔴 [Spring Security](security/spring-security.md)
-- 🆕 📗 [Password Storage Guide](security/password-storage-guide.md)
 - [CORS](security/cors.md)
 
 # Microservices
