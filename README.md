@@ -1,6 +1,8 @@
 # System design
 
-- [Live Page](https://cosminbucur.github.io/system-design/)
+> 🔴 Important 🟠 Nice to have 🎯 Topic 📗 Guide 🆕 Recently added
+
+- ℹ️ [Live Page](https://cosminbucur.github.io/system-design/)
 
 - 🔴 🎯 [System Design](system-design.md)
 - 🔴 📗 [DDD Structure](ddd-structure.md)
@@ -125,13 +127,14 @@
 
 - [JDBI](database/jdbi.md)
 
-- 🔴 [JPA Persistence](database/jpa-persistence.md)
-  - 🆕 🔴 [Entities](database/entities.md)
-  - 🆕 [Entities (Lombok)](database/entities-lombok.md)
-- 🆕 [Spring Data](database/spring-data.md)
-- 🆕 📗[Spring Data Auditing Guide](database/spring-data-auditing-guide.md)
-- 🆕 [Hibernate](database/hibernate.md)
-  - [Hibernate cache](database/hibernate-cache.md)
+- ORM
+  - 🔴 [JPA Persistence](database/jpa-persistence.md)
+    - 🆕 🔴 [Entities](database/entities.md)
+    - 🆕 [Entities (Lombok)](database/entities-lombok.md)
+  - 🆕 [Spring Data](database/spring-data.md)
+  - 🆕 📗[Spring Data Auditing Guide](database/spring-data-auditing-guide.md)
+  - 🆕 [Hibernate](database/hibernate.md)
+    - [Hibernate cache](database/hibernate-cache.md)
 
 - 🔴 [Pagination](database/pagination.md)
 - [Cursor Pagination](database/pagination-cursor.md)
@@ -384,10 +387,14 @@
 
 # DevOps and CI/CD
 
+- Build Tools
+  - 🆕 [Gradle](devops/gradle.md)
+  - 🆕 [Maven](devops/maven.md)
+
 - [CI/CD](devops/ci-cd.md)
-- [Continous Deployment](devops/continuous-deployment.md)
-- [CI/CD Pipeline Guide](devops/ci-cd-pipeline-guide.md)
-- 🆕 [Github](devops/github.md)
+  - [Continous Deployment](devops/continuous-deployment.md)
+  - [CI/CD Pipeline Guide](devops/ci-cd-pipeline-guide.md)
+  - 🆕 [Github](devops/github.md)
 
 - [Containers](devops/docker.md) Docker
 - [Orchestration](devops/kubernetes.md) Kubernetes
@@ -395,18 +402,8 @@
 - [GitOps](devops/gitops.md) ArgoCD
 - 🆕 [IaC (Infrastructure as Code)](devops/terraform.md)
 
-- 🆕 [Maven](devops/maven.md)
-- 🆕 [Gradle](devops/gradle.md)
-
-# Multi tenancy
-
 # AI
 
 - [AI agents](ai/ai-agents.md)
 - [Cursor Agent](ai/cursor-agent.md)
-
-🔴 Important
-🟠 Nice to have
-🎯 Topic
-📗 Guide
-🆕 Recently added
+- 🆕 📗 [MCP Servers Guide](mcp-servers-guide.md)
