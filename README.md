@@ -6,7 +6,7 @@
 
 - 🎯 [Architect Roadmap](1-roadmap/architect-roadmap.md)
 - 🎯 [Algorithms Roadmap](1-roadmap/algorithms-roadmap.md)
-- 🔴 🎯 [System Design Roadmap](1-roadmap/system-design.md)
+- 🔴 🎯 [System Design Roadmap](1-roadmap/system-design-roadmap.md)
 - 🔴 📗 [DDD Structure](1-roadmap/ddd-structure.md)
   - [Multi Tenant Core Banking](1-roadmap/multi-tenant-core-banking.md)
 
