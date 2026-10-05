@@ -2,11 +2,15 @@
 
 > 🔴 Important 🟠 Nice to have 🎯 Topic 📗 Guide 🆕 Recently added
 
-- ℹ️ [Live Page](https://cosminbucur.github.io/system-design/)
+- ℹ️ Live Page: https://cosminbucur.github.io/system-design/
 
-- 🔴 🎯 [System Design](system-design.md)
-- 🔴 📗 [DDD Structure](ddd-structure.md)
-- [Multi Tenant Core Banking](multi-tenant-core-banking.md)
+- 🎯 [Architect Roadmap](1-roadmap/architect-roadmap.md)
+- 🎯 [Algorithms Roadmap](1-roadmap/algorithms-roadmap.md)
+- 🔴 🎯 [System Design Roadmap](1-roadmap/system-design.md)
+- 🔴 📗 [DDD Structure](1-roadmap/ddd-structure.md)
+  - [Multi Tenant Core Banking](1-roadmap/multi-tenant-core-banking.md)
+
+- 🎯 [Interview Prep](1-roadmap/interview-prep.md)
 
 # Java
 
@@ -143,6 +147,7 @@
     - 🔴 📦 [CAP Theorem](database/cap-theorem.md)
 
   - 🔴 [Locking: Optimistic vs Pessimistic](database/locking-optimist-pessimist.md)
+  - [Database Locks](database/lock-database.md)
   - 📗 [Lock Contention Guide](database/lock-contention-guide.md)
 
 - [JDBI](database/jdbi.md)
@@ -159,6 +164,7 @@
   - [Cursor Pagination](database/pagination-cursor.md)
 
 - [DB migration](database/db-migration.md)
+  - Liquibase
 - [Audit](database/auditing.md)
 - 🆕 📗[Spring Data Auditing Guide](database/spring-data-auditing-guide.md)
 
@@ -449,4 +455,4 @@
 
 - [AI agents](ai/ai-agents.md)
 - [Cursor Agent](ai/cursor-agent.md)
-- 🆕 📗 [MCP Servers Guide](mcp-servers-guide.md)
+- 🆕 📗 [MCP Servers Guide](ai/mcp-servers-guide.md)

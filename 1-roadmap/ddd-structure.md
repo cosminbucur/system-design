@@ -1,38 +1,5 @@
 ```
-book-service/                               # Repository Root
-├── .github/                                # CI/CD pipelines (GitHub Actions)
-│   └── workflows/
-│       └── ci-cd.yml                       # Runs static analysis, tests, & builds container
-├── config/                                 # Static analysis & code style configs
-│   ├── checkstyle/
-│   │   └── checkstyle.xml                  # Code style rules
-│   └── sonarqube/
-│       └── sonar-project.properties        # SonarQube quality gate config
-├── terraform/                              # IaC (Infrastructure as Code)
-│   ├── main.tf                             # Provisions AWS/GCP resources (PostgreSQL, Kafka, EKS)
-│   ├── variables.tf
-│   └── outputs.tf
-├── deploy/                                 # Kubernetes & GitOps manifests
-│   ├── helm/                               # Helm chart for the book service
-│   │   └── book-service/
-│   ├── argocd/                             # ArgoCD Application definition manifests
-│   │   └── book-service-app.yaml
-│   └── monitoring/                         # Alerting & Observability configs
-│       ├── prometheus-rules.yaml           # Prometheus alert rules (e.g., High Error Rate, CPU)
-│       └── grafana-dashboard.json          # Custom Grafana dashboard for the microservice
-├── e2e/                                    # Playwright E2E Tests (Node.js/TypeScript)
-│   ├── tests/                              # Playwright test specs (.spec.ts)
-│   ├── playwright.config.ts                # Playwright configuration
-│   └── package.json                        # Playwright dependencies
-├── load-tests/                             # Performance & Load Tests (e.g., k6 scripts)
-│   └── book-catalog-load-test.js
-├── profiling/                              # Profiling tools & JFR configs
-│   ├── jfr-profile.jfc                     # Java Flight Recorder profile template
-│   └── generate-flamegraph.sh              # Script to pull and parse flame graphs
-├── Dockerfile                              # Multi-stage Docker build for the Spring Boot app
-├── docker-compose.yml                      # Local dev setup (App + PostgreSQL + Redis + Kafka)
-├── build.gradle.kts (or pom.xml)
-
+# Microservie Architecture DDD + Hexagonal
 
 src/main/java/com/company/bookservice/
 ├── BookServiceApplication.java
@@ -125,6 +92,8 @@ src/main/java/com/company/bookservice/
         ├── BookWebSocketController.java    # Real-time WebSocket handler
         └── WebSocketConfig.java            # STOMP / WebSocket configuration
 
+# Tests
+
 src/test/java/com/company/bookservice/
 ├── architecture/
 │   └── ArchUnitTests.java                  # Enforces DDD package dependency rules
@@ -133,11 +102,51 @@ src/test/java/com/company/bookservice/
 └── unit/
     └── BookDomainTest.java                 # Pure unit tests for aggregate logic
 
+# Resources
+
 src/main/resources/
 ├── application.yml
 └── db/
     └── migration/                          # Flyway / Liquibase versioned SQL scripts
     └── V1__create_book_table.sql
+
+# Infrastructure
+
+book-service/                               # Repository Root
+├── .github/                                # CI/CD pipelines (GitHub Actions)
+│   └── workflows/
+│       └── ci-cd.yml                       # Runs static analysis, tests, & builds container
+├── config/                                 # Static analysis & code style configs
+│   ├── checkstyle/
+│   │   └── checkstyle.xml                  # Code style rules
+│   └── sonarqube/
+│       └── sonar-project.properties        # SonarQube quality gate config
+├── terraform/                              # IaC (Infrastructure as Code)
+│   ├── main.tf                             # Provisions AWS/GCP resources (PostgreSQL, Kafka, EKS)
+│   ├── variables.tf
+│   └── outputs.tf
+├── deploy/                                 # Kubernetes & GitOps manifests
+│   ├── helm/                               # Helm chart for the book service
+│   │   └── book-service/
+│   ├── argocd/                             # ArgoCD Application definition manifests
+│   │   └── book-service-app.yaml
+│   └── monitoring/                         # Alerting & Observability configs
+│       ├── prometheus-rules.yaml           # Prometheus alert rules (e.g., High Error Rate, CPU)
+│       └── grafana-dashboard.json          # Custom Grafana dashboard for the microservice
+├── e2e/                                    # Playwright E2E Tests (Node.js/TypeScript)
+│   ├── tests/                              # Playwright test specs (.spec.ts)
+│   ├── playwright.config.ts                # Playwright configuration
+│   └── package.json                        # Playwright dependencies
+├── load-tests/                             # Performance & Load Tests (e.g., k6 scripts)
+│   └── book-catalog-load-test.js
+├── profiling/                              # Profiling tools & JFR configs
+│   ├── jfr-profile.jfc                     # Java Flight Recorder profile template
+│   └── generate-flamegraph.sh              # Script to pull and parse flame graphs
+├── Dockerfile                              # Multi-stage Docker build for the Spring Boot app
+├── docker-compose.yml                      # Local dev setup (App + PostgreSQL + Redis + Kafka)
+├── build.gradle.kts (or pom.xml)
+
+# External Analytics
 
 ├── spark-recommendation-job/               # Standalone Spark Scala/Python project for book recommendations
 ├── hadoop-etl-pipelines/                   # Hadoop map-reduce or Hive scripts
