@@ -1,4 +1,4 @@
-![alt text](_architecture-styles.png)
+![alt text](0-architecture-styles.png)
 ![alt text](architecture.png)
 ![alt text](architecture2.png)
 

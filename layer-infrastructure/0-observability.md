@@ -1,7 +1,7 @@
 Observability is the ability to understand what a running system is doing from the outside, without having to guess or attach a debugger — built from three complementary signal types: logs (discrete events), metrics (aggregated numbers over time), and traces (the path a single request took across services). None of the three alone is enough; each answers a different question, and each now has its own dedicated note.
 
-![alt text](_observability.png)
-![alt text](_observability2.png)
+![alt text](0-observability.png)
+![alt text](0-observability2.png)
 
 ## 1. The Three Pillars — What Each One Answers
 

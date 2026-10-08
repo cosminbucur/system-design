@@ -19,6 +19,9 @@
 - 🔴 [Functional Programming](java/functional-programming.md)
 - 🔴 [Sorting: Comparable and Comparator](java/sorting.md)
 - 🔴 [Modern Java features](java/modern-java-features.md)
+- 🆕 📗 [BigDecimal Guide](java/java-bigdecimal-guide.md)
+- 🆕 📗 [Date Time Guide](java/java-date-time-guide.md)
+- [Null checks](java/null-checks.md)
 
 # Data Structures
 
@@ -86,7 +89,7 @@
 - Fundamentals
   - [I/O vs CPU Bound](java-multithreading/io-cpu-bound.md)
   - [Concurrency vs Parallelism](java-multithreading/concurrency.md)
-  - 🔴 🎯 [Multithreading](java-multithreading/_multithreading.md) ExecutorService
+  - 🔴 🎯 [Multithreading](java-multithreading/0-multithreading.md) ExecutorService
 
 - Thread Safety
   - 🔴 📗 [Thread Safety Guide](java-multithreading/thread-safety-guide.md)
@@ -135,7 +138,7 @@
 - SQL
 
 - Relational Databases
-  - 🔴 [RDBS Databases](database/_databases.md)
+  - 🔴 [RDBS Databases](database/0-databases.md)
   - 🔴 [Normalization/Denormalization](database/database-normalization-guide.md)
   - [Materialized Views](database/materialized-views.md)
 
@@ -182,7 +185,7 @@
 
 # Database Scaling
 
-- [DB Scaling](database/database-scaling.md)
+- 🎯 [DB Scaling](database/0-database-scaling.md)
 - [Db Indexing](database/db-indexing.md)
   - 🆕 📗 [Database Keys Guide](database/database-keys-guide.md)
   - 🆕 📗 [Composite Index Guide](database/composite-index-guide.md)
@@ -202,7 +205,7 @@
 - 🟠 [HTTP protocols](api/http-protocols.md)
 
 - API Styles
-  - 🔴 [API](api/_api.md)
+  - 🔴 🎯 [API](api/0-api.md)
   - 🔴 [REST](api/rest.md)
   - [gRPC](api/grpc.md)
     - 🆕 [Protobuf](api/protobuf.md)
@@ -263,11 +266,13 @@
 - 🔴 [Design Patterns - Structure](design-principles/design-patterns-structure.md)
 
 - [DDD](design-principles/ddd.md)
+  - [Attributes as Records](design-principles/attributes-as-records.md)
+  - [Price](design-principles/price.md)
 - [UI patterns](design-principles/ui-patterns.md)
 
 # Architecture
 
-- 🎯 [Architecture Layers](architecture/_architecture-layers.md)
+- 🎯 [Architecture Layers](architecture/0-architecture-layers.md)
 - 🎯 [Architecture patterns](architecture/architecture.md)
 - 🎯 [IoT, Edge, Cloud](architecture/iot-edge-cloud.md)
 
@@ -286,7 +291,7 @@
   - 🆕 [Spring Cloud Config](layer-infrastructure/spring-cloud-config.md)
 - [Microservice Chassis]
 
-- 🎯 [Observability](layer-infrastructure/observability.md)
+- 🎯 [Observability](layer-infrastructure/0-observability.md)
   - [Logs](layer-infrastructure/logs.md) Loki
     - [Log Types](layer-infrastructure/log-types.md)
     - 📗 [API gateway logging guide](layer-infrastructure/api-gateway-logging-guide.md)
@@ -340,7 +345,7 @@
   - 📗 [Video Streaming](processing/video-streaming.md)
 
 - Messaging
-  - 🔴 🎯 [Messaging](processing/_messaging.md)
+  - 🔴 🎯 [Messaging](processing/messaging.md)
   - 🆕 [Messaging Protocols](processing/messaging-protocols.md)
   - 🔴 📦 [Pub/Sub](processing/pub-sub.md)
   - 🔴 📦 [Message Queues](processing/message-queues.md)
@@ -393,6 +398,7 @@
 # Microservices
 
 - 🎯 [Distributed Systems](microservices/distributed-system.md)
+- 🆕 [Microservice Architecture](microservices/0-microservice-architecture.md)
 - [Microservices Patterns](microservices/microservices-patterns.md)
 
 - Decomposition
@@ -403,7 +409,7 @@
 
 - 📦 [Load Balancing](resilience/load-balancing.md)
 - 📦 [Circuit Breaker](resilience/circuit-breaker.md) stops calling something that's clearly broken - Resilience4j
-  - 🆕 [Spring Hystrix](microservices/hystrix.md) - circuit breaker
+  - 🆕 [Spring Hystrix](resilience/hystrix.md) - circuit breaker
 
 - Downstream
   - 📦 [Timeout](resilience/timeout.md)

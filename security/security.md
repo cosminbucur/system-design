@@ -14,7 +14,7 @@ QR Code - Encodes a random token into a QR code for mobile login. Scanning the c
 
 Security in a Java web app usually means three distinct concerns layered on top of each other: authentication (who are you?), authorization (what are you allowed to do?), and delegated access (letting a third party act on your behalf, without handing out your password) — the last one is what OAuth2/OIDC solve. Spring Security is the dominant framework for wiring all three together.
 
-![alt text](_identity.png)
+![alt text](0-identity.png)
 
 ## 1. Authentication vs Authorization — Don't Conflate Them
 

@@ -1,6 +1,6 @@
 ACID is the set of guarantees a relational transaction makes about how it affects the database — Atomicity, Consistency, Isolation, Durability. These four properties are what let you reason about a multi-statement operation as if it were a single, indivisible step, even though the database is actually executing it as several separate writes under the hood, possibly interleaved with other transactions running at the same time.
 
-![alt text](_db-transactions.png)
+![alt text](0-db-transactions.png)
 
 ## 1. Atomicity — All or Nothing
 

@@ -1,4 +1,4 @@
-![alt text](_messaging-patterns.png)
+![alt text](0-messaging-patterns.png)
 
 Message Queues: One producer, one consumer. Tasks get processed once and only once.
 

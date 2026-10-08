@@ -1,4 +1,4 @@
-![alt text](_authentication.png)
+![alt text](0-authentication.png)
 
 1. SSH Keys
    Cryptographic keys are used to access remote systems and servers securely.

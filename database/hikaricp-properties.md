@@ -2,7 +2,7 @@
 
 These are the bare minimum required to establish a connection.
 
-```properties application.properties
+```sh
 # The JDBC URL for the database
 hikari.jdbcUrl=jdbc:mysql://localhost:3306/your_db
 
@@ -18,9 +18,7 @@ hikari.driverClassName=com.mysql.cj.jdbc.Driver
 
 These properties control the performance and resource usage of the pool.
 
-```properties application.properties
-// ... existing code ...
-
+```sh
 # Maximum number of actual connections to the backend
 hikari.maximumPoolSize=10
 
@@ -35,17 +33,13 @@ hikari.maxLifetime=1800000
 
 # Maximum number of milliseconds that a client will wait for a connection from the pool
 hikari.connectionTimeout=30000
-
-// ... rest of code ...
 ```
 
 ### 3. Advanced Settings
 
 Useful for debugging and specific database requirements.
 
-```properties application.properties
-// ... existing code ...
-
+```sh
 # User-defined name for the connection pool (appears in logging)
 hikari.poolName=MyHikariPool
 
@@ -54,8 +48,6 @@ hikari.connectionTestQuery=SELECT 1
 
 # Whether or not connections obtained from the pool are in auto-commit mode by default
 hikari.autoCommit=true
-
-// ... rest of code ...
 ```
 
 ### Summary of Key Parameters

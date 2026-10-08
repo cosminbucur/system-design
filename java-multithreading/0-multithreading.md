@@ -1,6 +1,6 @@
 Multithreading is the Java implementation technique for running work on multiple actual threads (platform or virtual) that the JVM schedules — the concrete mechanics behind the concepts covered in concurrency and parallelism, and the direct tool for addressing the shared-mutable-state problem introduced there. This note covers threads themselves: their lifecycle, how to coordinate access to shared state safely, how to avoid creating threads by hand, and the classic failure mode (deadlock) that coordinating multiple threads can introduce. Asynchronous programming — the non-blocking, callback/future-based style often built on top of thread pools — is covered separately, since it's a distinct way of structuring work rather than a property of threads themselves.
 
-![alt text](_multithreading.png)
+![alt text](0-multithreading.png)
 
 **Producer-Consumer Pattern**
 This pattern involves two types of threads: producers generating data and consumers processing that data. A blocking queue acts as a buffer between the two.

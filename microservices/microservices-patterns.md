@@ -1,6 +1,6 @@
 Microservices patterns solve problems that only exist once you split a monolith into independently deployed services: network unreliability, distributed data consistency, cross-cutting concerns duplicated across services, and observability across process boundaries. Most of these are Java-ecosystem-agnostic, but examples below use Spring Cloud / Resilience4j where relevant since that's the common Java toolchain.
 
-![alt text](microservice-components.png)
+![alt text](0-microservice-components.png)
 
 ## 1. Decomposition: How to Split in the First Place
 

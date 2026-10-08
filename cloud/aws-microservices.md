@@ -1,6 +1,6 @@
 # AWS Microservices Architecture & Ecosystem Reference
 
-![alt text](_aws-cloud-services.png)
+![alt text](0-aws-cloud-services.png)
 
 ## 1. Core AWS Services
 

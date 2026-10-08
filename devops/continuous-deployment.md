@@ -1,4 +1,4 @@
-![alt text](_production.png)
+![alt text](0-production.png)
 
 Continuous Deployment is the "last mile" of CI/CD already covered in ci-cd.md: once a build passes every gate, how does the new version actually replace the old one in production without an outage or an unrecoverable mistake? The strategies below are different answers to that same question, each trading off cost, rollback speed, and blast radius differently.
 
@@ -55,19 +55,19 @@ This is the cheapest way to validate a new feature against real user behavior be
 
 ## 5. Comparing the Strategies
 
-| Strategy | Rollback speed | Infrastructure cost | Where validation happens |
-| --- | --- | --- | --- |
-| Multi-service (big-bang) | Slow — coordinated rollback across every service | Low — no extra environment | Pre-production only |
-| Blue-Green | Instant — switch traffic back | High — two full production-scale environments | Green environment, before the switch |
-| Canary | Fast — shrink traffic back to 0% | Low-moderate — no second full environment, just capacity headroom | Production, on a capped slice of real traffic |
-| A/B Test | N/A — this isn't primarily a safety mechanism | Low — same infrastructure, split by routing/flag | Production, over an extended comparison window |
+| Strategy                 | Rollback speed                                   | Infrastructure cost                                               | Where validation happens                       |
+| ------------------------ | ------------------------------------------------ | ----------------------------------------------------------------- | ---------------------------------------------- |
+| Multi-service (big-bang) | Slow — coordinated rollback across every service | Low — no extra environment                                        | Pre-production only                            |
+| Blue-Green               | Instant — switch traffic back                    | High — two full production-scale environments                     | Green environment, before the switch           |
+| Canary                   | Fast — shrink traffic back to 0%                 | Low-moderate — no second full environment, just capacity headroom | Production, on a capped slice of real traffic  |
+| A/B Test                 | N/A — this isn't primarily a safety mechanism    | Low — same infrastructure, split by routing/flag                  | Production, over an extended comparison window |
 
 ## 6. Best Practices
 
-| Practice | Recommendation |
-| --- | --- |
+| Practice                                                       | Recommendation                                                                                                                                             |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Choose the strategy by what you're actually protecting against | Blue-green suits a hard cutover needing instant rollback; canary suits gradually de-risking a rollout when a second full environment isn't worth the cost. |
-| Never run a canary or A/B split without real monitoring | Both rely on comparing the new version's behavior against the old in real time — without metrics, you're just deploying blind to a subset of users. |
-| Gate feature exposure behind explicit flags for A/B tests | Raw traffic-splitting infrastructure without a flag system risks a half-finished feature shipping to users before a decision was made to ship it. |
-| Cap canary blast radius deliberately, then increase gradually | Jumping straight to 50% defeats the purpose — the point is validating on the smallest slice that still gives a meaningful signal. |
-| Weigh blue-green's cost against its instant-rollback benefit | Worth it for a service where even a brief bad rollout is unacceptable; often not worth doubling infrastructure cost for lower-risk services. |
+| Never run a canary or A/B split without real monitoring        | Both rely on comparing the new version's behavior against the old in real time — without metrics, you're just deploying blind to a subset of users.        |
+| Gate feature exposure behind explicit flags for A/B tests      | Raw traffic-splitting infrastructure without a flag system risks a half-finished feature shipping to users before a decision was made to ship it.          |
+| Cap canary blast radius deliberately, then increase gradually  | Jumping straight to 50% defeats the purpose — the point is validating on the smallest slice that still gives a meaningful signal.                          |
+| Weigh blue-green's cost against its instant-rollback benefit   | Worth it for a service where even a brief bad rollout is unacceptable; often not worth doubling infrastructure cost for lower-risk services.               |
