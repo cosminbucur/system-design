@@ -14,7 +14,9 @@
 
 # Java
 
+- 🆕 🔴 [Equals - Hashcode](java/equals-hashcode.md)
 - 🔴 [Exceptions](java/exceptions.md)
+- 🆕 🔴 [Type Erasure](java/type-erasure.md)
 - 🔴 [Streams](java/streams.md)
 - 🔴 [Functional Programming](java/functional-programming.md)
 - 🔴 [Sorting: Comparable and Comparator](java/sorting.md)
@@ -194,6 +196,7 @@
 - [Db Replication](database/db-replication.md) - solves READ scaling without splitting data
 - 🔴 [Caching](database/caching.md) - reduces load on the database for hot reads
   - [Cache Eviction](database/cache-eviction.md)
+  - 🆕 [Caffeine Bounds](database/caffeine-bounds.md)
   - 🆕 [Spring Cache](database/spring-cache.md)
 - [Partitioning](database/partitioning.md) - solves query/maintenance pain within one instance
 - [Sharding](database/sharding.md) - data split on multiple instances
@@ -313,6 +316,7 @@
     - 📗 [Tomcat Thread Pool Guide](layer-infrastructure/tomcat-thread-pool-guide.md)
     - 📗 [Java Heap Dump Guide](layer-infrastructure/java-heap-dump-guide.md)
     - 📗 [Memory Leaks Guide](layer-infrastructure/java-memory-leaks-guide.md)
+    - 🆕 [Memory Sizing](layer-infrastructure/memory-sizing.md)
 
 - Infrastructure as Code
   - [Terraform](layer-infrastructure/terraform.md)
@@ -407,6 +411,7 @@
 
 # 🔴 Resilience
 
+- 🆕 📗 [Resilience Guide](resilience/resilience-guide.md)
 - 📦 [Load Balancing](resilience/load-balancing.md)
 - 📦 [Circuit Breaker](resilience/circuit-breaker.md) stops calling something that's clearly broken - Resilience4j
   - 🆕 [Spring Hystrix](resilience/hystrix.md) - circuit breaker

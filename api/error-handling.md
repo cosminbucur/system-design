@@ -1,5 +1,17 @@
 In REST APIs, exception handling maps backend Java errors into standardized HTTP responses with structured JSON payloads. Instead of exposing raw stack traces or SQL errors, you return proper HTTP Status Codes alongside machine-readable Error Codes and human-readable messages.
 
+## Why error codes?
+
+Error codes serve several concrete purposes beyond the HTTP status code:
+
+- **Programmatic handling**: Clients can branch on a stable code (`if (error.code === 'trip_too_short')`) rather than parsing fragile human-readable strings. This is the single biggest reason — it makes client logic deterministic and testable.
+- **Fine-grained categorization**: HTTP status codes are coarse (e.g., `400` covers a huge range of issues). Application-level error codes distinguish _which_ specific validation failed, _which_ resource wasn't found, _what_ conflict occurred, etc.
+- **Retry & resilience decisions**: Precise codes let clients and intermediaries implement appropriate strategies — retry with backoff on 5xx, don't retry on 404, etc.
+- **Localization**: A code can be mapped to a localized message per client locale without the server needing to know the user's language.
+- **Consistency & self-documentation**: A stable, documented code is a contract. It's the one piece of an error response that won't change when you reword a message, so client code built against it stays stable.
+
+In short: HTTP status codes tell the client _the category_ of failure; error codes tell it _exactly what went wrong_ so it can react correctly without guessing from prose.
+
 ## 1. Standard Error Response Structure
 
 Every error returned by your API should follow a consistent JSON schema. RFC 7807 (Problem Details for HTTP APIs) is the standard blueprint:
