@@ -1,4 +1,4 @@
-Rate limiting, time limiting, and bulkheading solve related failure modes that all show up as "a dependency is being asked to do more than it should" — a rate limiter caps *how many* calls are allowed in a given window, a time limiter caps *how long* any single call is allowed to take, and a bulkhead caps *how much concurrent capacity* any one dependency can consume. All three exist to protect a service (or its caller) from being overwhelmed, but they intervene on different axes: volume, duration, and concurrency.
+Rate limiting, time limiting, and bulkheading solve related failure modes that all show up as "a dependency is being asked to do more than it should" — a rate limiter caps _how many_ calls are allowed in a given window, a time limiter caps _how long_ any single call is allowed to take, and a bulkhead caps _how much concurrent capacity_ any one dependency can consume. All three exist to protect a service (or its caller) from being overwhelmed, but they intervene on different axes: volume, duration, and concurrency.
 
 ## 1. Rate Limiter — Capping Call Volume
 
@@ -23,9 +23,9 @@ public class InventoryClientService {
 resilience4j.ratelimiter:
   instances:
     inventoryService:
-      limit-for-period: 50       # allow at most 50 calls...
-      limit-refresh-period: 1s   # ...per 1-second window
-      timeout-duration: 0        # don't wait for a permit — reject immediately if none available
+      limit-for-period: 50 # allow at most 50 calls...
+      limit-refresh-period: 1s # ...per 1-second window
+      timeout-duration: 0 # don't wait for a permit — reject immediately if none available
 ```
 
 At the API boundary, the same idea is expressed as an HTTP-level contract rather than an internal library setting:
@@ -46,12 +46,12 @@ public ResponseEntity<List<Order>> getOrders() {
 
 ## 2. Rate Limiting Algorithms
 
-| Algorithm | Behavior | Tradeoff |
-| --- | --- | --- |
-| Fixed window | Count requests in a fixed time bucket (e.g., per calendar second); reset the count each new window | Simple, but allows a burst of 2x the limit right across a window boundary |
-| Sliding window | Count requests over a rolling window ending "now," not a fixed calendar boundary | Smooths out the boundary-burst problem, slightly more bookkeeping |
-| Token bucket | Tokens refill at a steady rate into a bucket of fixed capacity; each request consumes one token | Naturally allows short bursts up to the bucket size while still capping sustained rate |
-| Leaky bucket | Requests queue and are processed at a strictly constant output rate | Smooths bursts into a steady rate, at the cost of added latency for queued requests |
+| Algorithm      | Behavior                                                                                           | Tradeoff                                                                               |
+| -------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Fixed window   | Count requests in a fixed time bucket (e.g., per calendar second); reset the count each new window | Simple, but allows a burst of 2x the limit right across a window boundary              |
+| Sliding window | Count requests over a rolling window ending "now," not a fixed calendar boundary                   | Smooths out the boundary-burst problem, slightly more bookkeeping                      |
+| Token bucket   | Tokens refill at a steady rate into a bucket of fixed capacity; each request consumes one token    | Naturally allows short bursts up to the bucket size while still capping sustained rate |
+| Leaky bucket   | Requests queue and are processed at a strictly constant output rate                                | Smooths bursts into a steady rate, at the cost of added latency for queued requests    |
 
 Token bucket is the most common default in practice — it tolerates brief, legitimate bursts (a user double-clicking, a batch of related calls) without abandoning an overall sustained-rate cap.
 
@@ -78,7 +78,7 @@ public class InventoryClientService {
 resilience4j.timelimiter:
   instances:
     inventoryService:
-      timeout-duration: 2s   # cancel and fail if the call hasn't completed within 2 seconds
+      timeout-duration: 2s # cancel and fail if the call hasn't completed within 2 seconds
       cancel-running-future: true
 ```
 
@@ -86,7 +86,7 @@ Without an explicit time limiter, an async call has no upper bound at all — it
 
 ## 4. Why Both Matter Together
 
-A rate limiter without a time limiter still lets individual calls hang indefinitely — capping *how many* calls happen doesn't help if each one that does get through can take forever. A time limiter without a rate limiter still lets a dependency be overwhelmed by sheer volume, even if no single call runs long — each one just fails fast individually while the flood continues. Used together, they cap both axes: no more than N calls per window, and no call allowed to run past a fixed bound.
+A rate limiter without a time limiter still lets individual calls hang indefinitely — capping _how many_ calls happen doesn't help if each one that does get through can take forever. A time limiter without a rate limiter still lets a dependency be overwhelmed by sheer volume, even if no single call runs long — each one just fails fast individually while the flood continues. Used together, they cap both axes: no more than N calls per window, and no call allowed to run past a fixed bound.
 
 ## 5. Where Each One Belongs in the Chain
 
@@ -97,6 +97,15 @@ Client → API Gateway (rate limit per client/API key, reject with 429)
 ```
 
 Rate limiting commonly appears at the edge (protecting the whole system from a noisy client) and again at each individual service (protecting that specific service from any caller, internal or external). Time limiting is applied per outbound call, wherever a service depends synchronously or asynchronously on something that could be slow.
+
+Implementing rate limiting **at the API Gateway level** is the most common and effective approach, as it provides centralized control, consistent policy enforcement, and protects backend services by rejecting excess traffic before it reaches them. However, for granular control, you can also implement rate limiting **within each microservice** as middleware or application-level code, or use a **dedicated rate limiting service** with distributed storage like Redis.
+
+- **API Gateway:** Centralized enforcement for all incoming requests; ideal for public APIs and coarse-grained limits.
+- **Service Middleware/Application Level:** Granular control per service; useful for internal APIs or specific high-cost operations.
+- **Sidecar Proxy:** Distributes enforcement closer to each service, avoiding gateway bottlenecks and allowing per-service capacity-based limits.
+- **Service Mesh:** Applies rate limits between services for service-to-service communication without passing through a central gateway.
+
+A **layered approach** is often best: use the API gateway for external traffic control, the service mesh for internal service-to-service limits, and application-level logic for fine-grained, context-aware restrictions.
 
 ## 6. Bulkhead — Capping Concurrent Capacity Per Dependency
 
@@ -130,10 +139,10 @@ Without this isolation, a shared thread pool serving calls to both `InventorySer
 
 ### Two Bulkhead Implementations
 
-| Type | How it isolates | Cost |
-| --- | --- | --- |
-| Semaphore bulkhead | A counting semaphore limits concurrent calls on the *calling* thread itself | Cheap, no extra threads, but a blocked call still ties up a caller thread until it returns |
-| Thread pool bulkhead | Calls run on a dedicated, separate thread pool per dependency | Fully isolates the caller's own threads from a slow dependency, at the cost of context-switching and managing more thread pools |
+| Type                 | How it isolates                                                             | Cost                                                                                                                            |
+| -------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Semaphore bulkhead   | A counting semaphore limits concurrent calls on the _calling_ thread itself | Cheap, no extra threads, but a blocked call still ties up a caller thread until it returns                                      |
+| Thread pool bulkhead | Calls run on a dedicated, separate thread pool per dependency               | Fully isolates the caller's own threads from a slow dependency, at the cost of context-switching and managing more thread pools |
 
 A thread pool bulkhead gives the strongest isolation — the calling thread itself is freed immediately and never blocks on the dependency at all — but it's heavier to run than a semaphore bulkhead, which is often sufficient when the caller can tolerate briefly waiting on its own thread.
 
@@ -151,14 +160,14 @@ A rate limiter without a bulkhead still lets the calls it does permit pile up on
 
 ## 8. Best Practices
 
-| Practice | Recommendation |
-| --- | --- |
-| Set rate limits based on the dependency's actual known capacity | A limit that's just a guess either throttles legitimate traffic or fails to protect anything. |
-| Prefer token bucket over fixed window for bursty, legitimate traffic | Fixed windows allow a boundary-crossing burst of up to 2x the intended limit. |
-| Return `429` + `Retry-After` at the API boundary, not a silent failure | Gives a well-behaved caller the information needed to back off correctly instead of retrying immediately. |
-| Always pair a time limiter with async calls | Without one, a slow dependency can leave a caller waiting indefinitely with no natural bound. |
-| Give each downstream dependency its own bulkhead | A shared pool lets one slow dependency starve calls to every other dependency sharing it. |
-| Use a thread pool bulkhead when the caller can't tolerate blocking at all | A semaphore bulkhead is cheaper but still ties up the caller's own thread until the call returns. |
-| Apply rate limiting at both the edge and per-service | Protects the whole system from a noisy client at the gateway, and each service from any caller individually. |
-| Don't rely on any single mechanism alone | Rate limiter, time limiter, bulkhead, circuit breaker, and retry/fallback each address a distinct failure mode — combine them. |
-| Make limiter and bulkhead thresholds configurable, not hardcoded | Real-world capacity changes over time — a limit baked into code requires a redeploy to adjust under a real incident. |
+| Practice                                                                  | Recommendation                                                                                                                 |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Set rate limits based on the dependency's actual known capacity           | A limit that's just a guess either throttles legitimate traffic or fails to protect anything.                                  |
+| Prefer token bucket over fixed window for bursty, legitimate traffic      | Fixed windows allow a boundary-crossing burst of up to 2x the intended limit.                                                  |
+| Return `429` + `Retry-After` at the API boundary, not a silent failure    | Gives a well-behaved caller the information needed to back off correctly instead of retrying immediately.                      |
+| Always pair a time limiter with async calls                               | Without one, a slow dependency can leave a caller waiting indefinitely with no natural bound.                                  |
+| Give each downstream dependency its own bulkhead                          | A shared pool lets one slow dependency starve calls to every other dependency sharing it.                                      |
+| Use a thread pool bulkhead when the caller can't tolerate blocking at all | A semaphore bulkhead is cheaper but still ties up the caller's own thread until the call returns.                              |
+| Apply rate limiting at both the edge and per-service                      | Protects the whole system from a noisy client at the gateway, and each service from any caller individually.                   |
+| Don't rely on any single mechanism alone                                  | Rate limiter, time limiter, bulkhead, circuit breaker, and retry/fallback each address a distinct failure mode — combine them. |
+| Make limiter and bulkhead thresholds configurable, not hardcoded          | Real-world capacity changes over time — a limit baked into code requires a redeploy to adjust under a real incident.           |

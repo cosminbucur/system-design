@@ -247,7 +247,8 @@
 - [End-to-End Tests](test/test-e2e.md) Playwright
 - 🟠 [Performance Tests](test/test-performance.md) Gatling, K6
 - [BDD Tests](test/test-bdd.md) Cucumber
-- [Architecture Tests](test/test-architecture.md) Archunit
+- [Architecture Tests](test/test-architecture.md)
+  - [Archunit](test/archunit.md)
 
 - 📦 [Pattern: Service Integration Contract Test]
 - 📦 [Pattern: Service Component Test]
@@ -373,6 +374,11 @@
 
   - [Remote Procedure Invocation]
 
+- Fan out
+  - 🆕 [Search service](microservices/search-service.md)
+  - 🆕 [Reporting Service](microservices/reporting-service.md)
+  - 🆕 [Analytics Service](microservices/analytics-service.md)
+
 # Security
 
 - 🔴 🎯 [Security](security/security.md) OIDC, Oauth2, JWT
@@ -404,6 +410,7 @@
 - 🎯 [Distributed Systems](microservices/distributed-system.md)
 - 🆕 [Microservice Architecture](microservices/0-microservice-architecture.md)
 - [Microservices Patterns](microservices/microservices-patterns.md)
+- [Microservices Anti-Patterns](microservices/microservices-antipatterns.md)
 
 - Decomposition
   - 📦 [Decompose by business capability](microservices/decompose-by-capability.md)
@@ -465,5 +472,8 @@
 # AI
 
 - [AI agents](ai/ai-agents.md)
-- [Cursor Agent](ai/cursor-agent.md)
+  - [Cursor Agent](ai/cursor-agent.md)
+  - [Free AI agents](ai/free-ai-agents.md)
+
 - 🆕 📗 [MCP Servers Guide](ai/mcp-servers-guide.md)
+- [Harness Engineering](ai/harness-engineering.md)

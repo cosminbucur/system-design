@@ -174,3 +174,16 @@ Because `Mono`/`Flux` in Reactive-programming deliberately mirror Stream operato
 | Re-create a stream from its source rather than reusing a consumed one | A stream is single-use; a second terminal operation on the same stream instance throws `IllegalStateException`. |
 | Reach for `flatMap` when `map` would produce a nested stream          | Collapses a `Stream<Stream<T>>` into a flat `Stream<T>` instead of leaving callers to unwrap it manually.       |
 | Don't use reactive types just to process an in-memory collection      | If the data is already fully available and synchronous, a plain `Stream` is simpler.                            |
+
+# When to use parallel streams
+
+**Parallel streams in Java 8 should be used primarily for CPU-intensive tasks involving large datasets where operations are stateless and independent.** They leverage multi-core processors to improve throughput by dividing work across threads in the `ForkJoinPool.commonPool()`.
+
+Use parallel streams when the **N \* Q model** indicates a high total computational cost, where **N** (number of elements) is large and **Q** (complexity per element) is significant. This approach is particularly effective for:
+
+- **Large Data Sets**: Processing collections with tens of thousands or millions of elements, where the overhead of thread management is amortized by the volume of work.
+- **CPU-Bound Operations**: Performing complex calculations, filtering, or mapping that do not involve I/O or database calls.
+- **Splittable Sources**: Using data structures like `ArrayList`, arrays, or ranges that can be efficiently split into subranges by a `Spliterator`.
+- **Order-Insensitive Results**: When the final result does not depend on the order of execution, such as in `reduce` or `collect` operations.
+
+Avoid parallel streams for **small datasets** (typically under 10,000 elements), **I/O-bound operations** (which can block the common pool), or scenarios requiring **strict ordering** or shared mutable state, as the overhead and synchronization costs often outweigh the performance benefits.

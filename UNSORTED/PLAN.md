@@ -1,0 +1,7 @@
+- system design
+  - theory
+  - draw 1 concept / session
+  - write simplified code
+  - write production code
+- algorithms
+  - study 1 problem / session

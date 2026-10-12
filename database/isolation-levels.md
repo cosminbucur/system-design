@@ -22,7 +22,7 @@ A **Dirty Read** occurs when Transaction A reads data that has been modified by 
 
 ---
 
-### 2. Non-Repeatable Read (Fuzzy Read)
+### 2. Non-Repeatable Read (Fuzzy Read) > Repeatable Read (solution)
 
 ![alt text](read-repeatable.png)
 
