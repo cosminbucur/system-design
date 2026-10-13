@@ -2,6 +2,8 @@
 
 Despite Java’s automatic garbage collection (GC), **memory leaks** remain a common performance and stability issue in Java applications.
 
+[Identify and fix memory leaks](https://www.youtube.com/watch?v=DM8hiMrQB7g)
+
 ---
 
 ## 1. What is a Memory Leak in Java?
@@ -9,11 +11,13 @@ Despite Java’s automatic garbage collection (GC), **memory leaks** remain a co
 A **memory leak** in Java occurs when objects that are **no longer needed by the application** remain reachable from the **Garbage Collector (GC) Roots**. Because a reference to these unused objects still exists in memory, the Garbage Collector cannot reclaim them.
 
 Over time, these unreferenced-yet-reachable objects accumulate, leading to:
+
 - Frequent Garbage Collection cycles (causing CPU spikes and stop-the-world pauses).
 - Poor application performance.
 - Eventually, an `java.lang.OutOfMemoryError: Java heap space`.
 
 ### Memory Leak vs. Memory Bloat
+
 - **Memory Leak:** Memory consumption steadily grows over time because unused objects cannot be garbage collected.
 - **Memory Bloat:** The application uses a large amount of memory intentionally or inefficiently, but memory can still be freed by the GC.
 
@@ -22,6 +26,7 @@ Over time, these unreferenced-yet-reachable objects accumulate, leading to:
 ## 2. Common Causes of Memory Leaks in Java
 
 ### A. Static Fields
+
 `static` variables live for the entire lifecycle of the Application ClassLoader. If a `static` collection (like a `List` or `Map`) holds onto objects, those objects will never be garbage collected unless explicitly removed or set to `null`.
 
 ```java
@@ -36,6 +41,7 @@ public class MemoryLeakExample {
 ```
 
 ### B. Unclosed Resources
+
 Failing to close stream handles, database connections, or socket connections can prevent associated buffer objects from being cleared.
 
 ```java
@@ -47,6 +53,7 @@ public void readFile(String filePath) throws IOException {
 ```
 
 ### C. Improper `equals()` and `hashCode()` Implementations
+
 When using custom objects as keys in a `HashMap` or elements in a `HashSet`, failure to properly override `equals()` and `hashCode()` leads to duplicate entries being inserted without the ability to retrieve or remove existing ones.
 
 ```java
@@ -63,10 +70,11 @@ public class Person {
 Map<Person, String> map = new HashMap<>();
 map.put(new Person("Alice"), "Engineer");
 // Re-adding a "duplicate" creates a new entry instead of replacing
-map.put(new Person("Alice"), "Manager"); 
+map.put(new Person("Alice"), "Manager");
 ```
 
 ### D. Non-Static Inner Classes & Anonymous Classes
+
 Inner classes hold an implicit reference to their enclosing outer class instance. If the inner class instance outlives the outer class instance (e.g., passed as a callback or running in a thread), the outer class cannot be collected.
 
 ```java
@@ -85,9 +93,11 @@ public class OuterClass {
 ```
 
 ### E. Unregistered Listeners and Observers
+
 Registering listeners or event handlers (e.g., GUI listeners or publisher-subscriber patterns) without deregistering them when they are no longer needed creates a strong reference chain.
 
 ### F. `ThreadLocal` Variables
+
 `ThreadLocal` instances maintain references to objects per thread. In application servers that use **Thread Pools** (like Tomcat), threads are reused rather than destroyed. If `ThreadLocal.remove()` is not called, the data persists for the lifetime of the worker thread.
 
 ---
@@ -95,6 +105,7 @@ Registering listeners or event handlers (e.g., GUI listeners or publisher-subscr
 ## 3. How to Mitigate and Prevent Memory Leaks
 
 ### 1. Clear `static` Collections or Avoid Long-Lived Caches
+
 - Avoid using unbounded `static` collections for caching.
 - Use established caching frameworks like **Guava Cache** or **Caffeine**, which support eviction policies (e.g., LRU, TTL, max size).
 
@@ -107,6 +118,7 @@ Cache<String, DataObject> cache = Caffeine.newBuilder()
 ```
 
 ### 2. Use `try-with-resources` for Resource Management
+
 Always close connections, streams, and files. Java 7+ provides `try-with-resources` which automatically closes any resource implementing `AutoCloseable`.
 
 ```java
@@ -120,10 +132,13 @@ public void readFileSafely(String filePath) {
 ```
 
 ### 3. Always Implement `equals()` and `hashCode()` Correctly
+
 When writing domain objects intended for sets or maps, override `equals()` and `hashCode()`. IDEs or libraries like **Lombok** (`@EqualsAndHashCode`) and Java 16+ **Records** can auto-generate these correctly.
 
 ### 4. Prefer Static Inner Classes and `WeakReference`
+
 To avoid holding an implicit reference to the enclosing class:
+
 - Make inner classes `static`.
 - Use `WeakReference` or `SoftReference` if a reference to the outer class or object is required.
 
@@ -142,6 +157,7 @@ public class OuterClass {
 ```
 
 ### 5. Always Clean Up `ThreadLocal`
+
 Ensure `ThreadLocal.remove()` is called in a `finally` block when working with pooled threads.
 
 ```java
@@ -158,6 +174,7 @@ public void processRequest(UserContext user) {
 ```
 
 ### 6. Deregister Event Listeners
+
 Whenever you subscribe to an event, make sure to unsubscribe during clean-up phases (e.g., `dispose()`, `@PreDestroy`, or lifecycle hooks).
 
 ---

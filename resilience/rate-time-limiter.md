@@ -1,5 +1,7 @@
 Rate limiting, time limiting, and bulkheading solve related failure modes that all show up as "a dependency is being asked to do more than it should" — a rate limiter caps _how many_ calls are allowed in a given window, a time limiter caps _how long_ any single call is allowed to take, and a bulkhead caps _how much concurrent capacity_ any one dependency can consume. All three exist to protect a service (or its caller) from being overwhelmed, but they intervene on different axes: volume, duration, and concurrency.
 
+[dzone - rate limiting](https://dzone.com/articles/rate-limiting-for-microservices)
+
 ## 1. Rate Limiter — Capping Call Volume
 
 A rate limiter restricts the number of calls permitted within a time window, rejecting or delaying anything beyond that cap. It can be applied on either side of a call: a service protecting itself from too many incoming requests, or a caller deliberately throttling itself against a downstream dependency's known capacity.

@@ -23,7 +23,8 @@
 - 🔴 [Modern Java features](java/modern-java-features.md)
 - 🆕 📗 [BigDecimal Guide](java/java-bigdecimal-guide.md)
 - 🆕 📗 [Date Time Guide](java/java-date-time-guide.md)
-- [Null checks](java/null-checks.md)
+- 🆕 [Null checks](java/null-checks.md)
+- 🆕 [Deep Copy](java/deep-copy.md)
 
 # Data Structures
 
@@ -92,6 +93,7 @@
   - [I/O vs CPU Bound](java-multithreading/io-cpu-bound.md)
   - [Concurrency vs Parallelism](java-multithreading/concurrency.md)
   - 🔴 🎯 [Multithreading](java-multithreading/0-multithreading.md) ExecutorService
+    - 🆕 🟠 [Thread Pools](java-multithreading/thread-pools.md)
 
 - Thread Safety
   - 🔴 📗 [Thread Safety Guide](java-multithreading/thread-safety-guide.md)
@@ -121,7 +123,8 @@
 
 - 🆕 [NIO.2](java-io/nio2.md) - path and file
 - 🟠 [NIO - Non-Blocking IO](java-io/nio.md) - buffer, channels and selectors
-- 🆕 📗 [Java Networking Guide](java-iio/java-networking-guide.md)
+- 🆕 📗 [Java Networking Guide](java-io/java-networking-guide.md)
+- 🆕 [Event Loop](java-io/event-loop.md)
 
 # Java Asynchronous
 

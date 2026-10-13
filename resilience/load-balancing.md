@@ -61,6 +61,8 @@ The distinction matters: a temporarily overloaded instance should fail readiness
 
 ## 4. Load Balancing at Every Layer
 
+![alt text](load-balancers3.png)
+
 Load balancing isn't one component — it shows up at several layers simultaneously in a typical microservices deployment, each solving the same underlying problem at a different scope.
 
 ```

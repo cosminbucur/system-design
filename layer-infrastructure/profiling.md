@@ -1,5 +1,7 @@
 Profiling answers a different question than observability: metrics/traces tell you _that_ something is slow and roughly _where_ (which service, which endpoint); profiling tells you _why_, down to which method, which line, or which object allocation is actually consuming CPU, memory, or blocking threads. Reach for a profiler when observability has already narrowed the problem to a specific service/process — profiling a whole distributed system at once isn't the right tool.
 
+[JFR tutorial](https://www.youtube.com/watch?v=bUnhIa2xuiE)
+
 ## 1. When to Profile vs When to Just Look at Metrics
 
 | Situation                                                 | Tool                        |

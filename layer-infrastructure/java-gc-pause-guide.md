@@ -122,3 +122,13 @@ Application allocation patterns remain the primary underlying cause of GC overhe
    - Utilize direct buffers (`ByteBuffer.allocateDirect()`) or off-heap engines (e.g., EHCache, Chronicle Map) for large long-lived caches to bypass GC tracking entirely.
 4. **Targeted Object Pooling:**
    - Restrict object pooling to heavy, expensive objects (such as database connections or thread pools). Avoid pooling simple lightweight objects, as modern JVM allocators handle short-lived allocations efficiently.
+
+## Senior interview question · GC tuning
+
+> Your service uses records extensively for API response objects. P50 latency is 4ms and looks healthy in dashboards. But P99 is 120ms and P99.9 is over 400ms. Heap is 512MB, running G1GC on Java 21. What do you investigate first, and what’s your remediation path?
+
+The latency profile — P50 fine, P99/P99.9 severely elevated — is the signature of GC-driven tail latency, not application logic. The median is unaffected because most requests complete between GC events; the tail captures requests that happen to run during a minor or mixed GC pause. The first step is to confirm this hypothesis by correlating GC events with latency spikes: enable -Xlog:gc\*:file=gc.log:time,level,tags and plot the GC pause timestamps against the P99 histogram. If pauses align with spikes, GC is the cause.
+
+The next question is why GC pauses are long. With G1 on a 512MB heap and a records-heavy workload, the likely culprits are a high allocation rate (check gc.alloc.rate in JFR or via jstat -gcutil), a young-gen that is too small for the allocation rate, or a -XX:MaxGCPauseMillis target that is too aggressive and forcing G1 into frequent, overlapping collections.
+
+The remediation path has two branches. If the allocation rate is genuinely high (above 500 MB/s), the correct first move is to switch to Generational ZGC with -XX:+UseZGC -XX:+ZGenerational. GenZGC is specifically optimised for short-lived object workloads and will cut P99 by roughly 10× for this pattern. The second branch — only if the allocation rate is so high that even GenZGC produces allocation stalls — is to profile hot code paths for record allocation and replace inner-loop records with local primitive variables or pre-allocated value buffers. JMH with -prof gc will identify which code paths are responsible. Notably, simply increasing heap size from 512MB to 2GB will reduce GC frequency and improve P99 with G1, but it will not eliminate the fundamental problem; it just buys time.

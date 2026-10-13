@@ -2,6 +2,8 @@ Modern Java (17–21+) added a cluster of features aimed squarely at reducing bo
 
 ## 1. Records — Data Carriers Without the Boilerplate
 
+[javacodegeeks - Records in production](https://www.javacodegeeks.com/2026/06/records-in-production-where-they-shine-and-where-they-silently-fail.html)
+
 A `record` declares an immutable data class in one line — the compiler generates the constructor, accessors, `equals()`, `hashCode()`, and `toString()` for you.
 
 ```java

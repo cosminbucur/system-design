@@ -4,6 +4,8 @@
 
 **API Throttling** is a technique used to control the rate of requests an API receives or processes. While **Rate Limiting** enforces a hard ceiling over a set time window (e.g., 100 requests per minute max, dropping extras with HTTP `429`), **Throttling** dynamically regulates traffic flow to prevent backend systems, databases, and microservices from being overwhelmed during load spikes.
 
+[dzone - api throtling strategies](https://dzone.com/articles/api-throttling-strategies)
+
 ## Rate Limiting vs. Throttling
 
 | Feature               | API Rate Limiting                                   | API Throttling                                                                |

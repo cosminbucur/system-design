@@ -1,5 +1,9 @@
 The Transactional Outbox pattern solves a specific consistency problem that shows up the moment a service needs to both update its own database and publish an event about that update: a database write and a message publish are two separate systems, and there's no way to wrap them in a single atomic transaction. Without a fix, you're stuck choosing which one to risk getting wrong — and both choices are bad.
 
+![alt text](transactional-outbox.png)
+
+🔗 [Dev.to - CDC/Outbox in microservices](https://dev.to/onepoint/using-change-data-capture-or-outbox-pattern-in-microservices-for-decentralized-data-propagation-4fii)
+
 ## 1. The Problem: Dual Writes Aren't Atomic
 
 ```java
@@ -19,7 +23,7 @@ Either way, the database and the rest of the system silently disagree about what
 
 ## 2. The Fix: Write the Event to the Same Database, Same Transaction
 
-Instead of publishing to the broker directly inside the business transaction, write the event as a row in an `outbox` table in the *same* database, as part of the *same* transaction as the business data change. A database transaction is atomic by nature — either both rows are committed, or neither is.
+Instead of publishing to the broker directly inside the business transaction, write the event as a row in an `outbox` table in the _same_ database, as part of the _same_ transaction as the business data change. A database transaction is atomic by nature — either both rows are committed, or neither is.
 
 ```java
 @Transactional
@@ -52,10 +56,10 @@ Now there's no dual-write problem at the point of the business transaction — t
 
 Something still has to read the outbox table and actually publish to the broker. Two common ways to do that:
 
-| Approach | How it works | Tradeoff |
-| --- | --- | --- |
-| Polling publisher | A background job periodically queries `WHERE processed = false`, publishes each row, then marks it processed | Simple to build, but introduces publish latency equal to the poll interval, and polling load on the database |
-| Change Data Capture (CDC) | A tool (Debezium) tails the database's transaction log directly and streams new outbox rows to the broker automatically | Near real-time, no polling load, but adds a CDC connector as new operational infrastructure |
+| Approach                  | How it works                                                                                                            | Tradeoff                                                                                                     |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Polling publisher         | A background job periodically queries `WHERE processed = false`, publishes each row, then marks it processed            | Simple to build, but introduces publish latency equal to the poll interval, and polling load on the database |
+| Change Data Capture (CDC) | A tool (Debezium) tails the database's transaction log directly and streams new outbox rows to the broker automatically | Near real-time, no polling load, but adds a CDC connector as new operational infrastructure                  |
 
 ```java
 @Scheduled(fixedDelay = 500)
@@ -96,21 +100,21 @@ An outbox table that only ever grows will eventually become a performance proble
 
 ## 6. When This Pattern Is Worth the Complexity
 
-| Situation | Outbox needed? |
-| --- | --- |
-| A service updates its own data and must reliably notify other services | Yes — this is exactly the problem it solves |
-| The event only needs to be "probably" delivered, occasional loss is tolerable | Probably not — the added table, publisher, and idempotent-consumer requirement may not be worth it |
+| Situation                                                                              | Outbox needed?                                                                                                                  |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| A service updates its own data and must reliably notify other services                 | Yes — this is exactly the problem it solves                                                                                     |
+| The event only needs to be "probably" delivered, occasional loss is tolerable          | Probably not — the added table, publisher, and idempotent-consumer requirement may not be worth it                              |
 | The service already uses event sourcing, where the event stream IS the source of truth | Not needed the same way — there's no separate business-data write to keep in sync with, since the event log already is the data |
 
 The pattern earns its complexity specifically when losing an event silently would be a real correctness problem (an order placed with no downstream fulfillment ever triggered) rather than a minor, tolerable gap.
 
 ## 7. Best Practices
 
-| Practice | Recommendation |
-| --- | --- |
-| Write the outbox row in the same transaction as the business data | This atomicity is the entire point — the pattern doesn't work if the two writes aren't truly transactional together. |
-| Make every consumer of outbox events idempotent | The pattern guarantees at-least-once delivery, never exactly-once — duplicate delivery is expected, not exceptional. |
-| Prefer CDC (Debezium) over polling at any real scale | Removes polling latency and database load; polling is fine for lower-volume services where the added infrastructure isn't justified yet. |
-| Clean up processed outbox rows on a schedule | An unbounded outbox table degrades both the publisher's query and general table performance over time. |
-| Include enough context in the outbox payload to avoid a callback | The event payload should generally be self-contained, not require the consumer to call back into the publishing service for details. |
+| Practice                                                                   | Recommendation                                                                                                                           |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Write the outbox row in the same transaction as the business data          | This atomicity is the entire point — the pattern doesn't work if the two writes aren't truly transactional together.                     |
+| Make every consumer of outbox events idempotent                            | The pattern guarantees at-least-once delivery, never exactly-once — duplicate delivery is expected, not exceptional.                     |
+| Prefer CDC (Debezium) over polling at any real scale                       | Removes polling latency and database load; polling is fine for lower-volume services where the added infrastructure isn't justified yet. |
+| Clean up processed outbox rows on a schedule                               | An unbounded outbox table degrades both the publisher's query and general table performance over time.                                   |
+| Include enough context in the outbox payload to avoid a callback           | The event payload should generally be self-contained, not require the consumer to call back into the publishing service for details.     |
 | Don't reach for this pattern when occasional event loss is truly tolerable | The added table, publisher process, and idempotency requirements are real costs — reserve it for genuinely correctness-sensitive events. |

@@ -1,5 +1,7 @@
 A Saga coordinates a business transaction that spans multiple services, each owning its own database, where a single ACID transaction across all of them isn't possible. Instead of one atomic commit, a saga is a sequence of local transactions — each service commits its own local change and publishes something that triggers the next step — with explicit compensating transactions defined to undo prior steps if a later one fails. It trades true atomicity for a workflow that's guaranteed to reach a consistent end state, either fully completed or fully compensated.
 
+[baeldung - Saga pattern](https://www.baeldung.com/cs/saga-pattern-microservices)
+
 ## 1. The Problem: No Distributed ACID Transaction
 
 Once `OrderService`, `InventoryService`, and `PaymentService` each own their own database, placing an order that touches all three can't be wrapped in one database transaction the way it could in a monolith.
@@ -16,11 +18,11 @@ If the payment step fails after inventory was already reserved, there's no autom
 
 Each step in a saga is a normal local ACID transaction within one service. What makes it a saga is that every step that changes state also has a corresponding compensating transaction defined for undoing it, since there's no database-level rollback available across service boundaries.
 
-| Step | Forward action | Compensating action |
-| --- | --- | --- |
-| 1 | `OrderService`: create order (status `PENDING`) | Cancel the order |
-| 2 | `InventoryService`: reserve stock | Release the reserved stock |
-| 3 | `PaymentService`: charge the card | Refund the charge |
+| Step | Forward action                                  | Compensating action        |
+| ---- | ----------------------------------------------- | -------------------------- |
+| 1    | `OrderService`: create order (status `PENDING`) | Cancel the order           |
+| 2    | `InventoryService`: reserve stock               | Release the reserved stock |
+| 3    | `PaymentService`: charge the card               | Refund the charge          |
 
 Compensations aren't a true rollback in the ACID sense — they're a new, forward-moving business action that semantically undoes the effect of an earlier step. "Refund the charge" doesn't erase the fact that a charge and a refund both happened; it just leaves the customer in the correct final financial state. This is a real, visible difference from a database transaction rollback, and it needs to make business sense on its own (e.g., a refund might trigger its own notification, unlike a silent rollback).
 
@@ -76,13 +78,13 @@ The entire workflow — happy path and every compensation — is readable in one
 
 ## 5. Choreography vs. Orchestration
 
-| | Choreography | Orchestration |
-| --- | --- | --- |
-| Coordination | Implicit — each service reacts to events | Explicit — a central component drives every step |
-| Coupling | Services only know the events they consume | The orchestrator knows about every participating service |
-| Visibility | The overall flow is scattered across services' event listeners | The overall flow is readable in one place |
-| Best fit | A short saga (2-3 steps), simple compensation logic | A longer or more complex saga, needing clear failure/compensation logic |
-| Failure to add a new step | Ripples through multiple services' event handling | Usually just one more step in the orchestrator |
+|                           | Choreography                                                   | Orchestration                                                           |
+| ------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Coordination              | Implicit — each service reacts to events                       | Explicit — a central component drives every step                        |
+| Coupling                  | Services only know the events they consume                     | The orchestrator knows about every participating service                |
+| Visibility                | The overall flow is scattered across services' event listeners | The overall flow is readable in one place                               |
+| Best fit                  | A short saga (2-3 steps), simple compensation logic            | A longer or more complex saga, needing clear failure/compensation logic |
+| Failure to add a new step | Ripples through multiple services' event handling              | Usually just one more step in the orchestrator                          |
 
 Neither is universally better — the general guidance is to start with choreography for a genuinely simple, short saga, and move to orchestration once the number of steps or the complexity of failure handling makes the implicit, scattered coordination of choreography harder to reason about than a single orchestrator would be.
 
@@ -100,12 +102,12 @@ public enum OrderStatus {
 
 ## 7. Best Practices
 
-| Practice | Recommendation |
-| --- | --- |
-| Define a compensating action for every step that changes state | Without one, a failure partway through leaves the system in an inconsistent state with no way to unwind it. |
-| Make every step (and every compensation) idempotent | A retried step or a redelivered event must not double-charge, double-reserve, or double-compensate. |
-| Start with choreography for short, simple sagas | Avoids building orchestration infrastructure for a workflow that doesn't need it yet. |
-| Move to orchestration once the flow gets hard to trace | A central, explicit coordinator is easier to reason about, test, and debug than event chains scattered across many services. |
-| Mark in-progress saga state explicitly (semantic lock) | Prevents the rest of the system from treating a not-yet-finalized record as if the saga had already completed. |
-| Design compensations as real business actions, not silent rollbacks | A refund, a cancellation notice, or a stock release is a visible action with its own consequences — model it as such. |
-| Give the orchestrator (if used) its own durability story | If the orchestrator can crash mid-saga, it needs to persist progress and resume, not lose track of an in-flight transaction. |
+| Practice                                                            | Recommendation                                                                                                               |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Define a compensating action for every step that changes state      | Without one, a failure partway through leaves the system in an inconsistent state with no way to unwind it.                  |
+| Make every step (and every compensation) idempotent                 | A retried step or a redelivered event must not double-charge, double-reserve, or double-compensate.                          |
+| Start with choreography for short, simple sagas                     | Avoids building orchestration infrastructure for a workflow that doesn't need it yet.                                        |
+| Move to orchestration once the flow gets hard to trace              | A central, explicit coordinator is easier to reason about, test, and debug than event chains scattered across many services. |
+| Mark in-progress saga state explicitly (semantic lock)              | Prevents the rest of the system from treating a not-yet-finalized record as if the saga had already completed.               |
+| Design compensations as real business actions, not silent rollbacks | A refund, a cancellation notice, or a stock release is a visible action with its own consequences — model it as such.        |
+| Give the orchestrator (if used) its own durability story            | If the orchestrator can crash mid-saga, it needs to persist progress and resume, not lose track of an in-flight transaction. |

@@ -1,5 +1,7 @@
 A circuit breaker prevents a failing downstream dependency from cascading into a failure of the caller. Without one, a service that keeps calling a struggling downstream dependency (slow, timing out, or erroring) piles up threads/connections waiting on responses that never come in time — the caller degrades right along with the thing it depends on, even though the caller itself is otherwise perfectly healthy. The pattern is named after an electrical circuit breaker for the same reason: once trouble is detected, it trips and stops the flow deliberately, rather than letting the fault propagate and burn out everything downstream of it.
 
+[mobisoftinfotech - resilience4j-circuit-breaker-retry-bulkhead-spring-boot](https://mobisoftinfotech.com/resources/blog/microservices/resilience4j-circuit-breaker-retry-bulkhead-spring-boot)
+
 ## 1. The Problem Without One
 
 ```
@@ -10,8 +12,8 @@ Every request to `OrderService` that needs inventory data now blocks for up to 3
 
 ## 2. The Three States
 
-|                 Image 1                 |                 Image 2                  |
-| :-------------------------------------: | :--------------------------------------: |
+|             Image 1              |              Image 2              |
+| :------------------------------: | :-------------------------------: |
 | ![alt text](circuit-breaker.png) | ![alt text](circuit-breaker2.png) |
 
 ```

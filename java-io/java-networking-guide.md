@@ -4,14 +4,16 @@ Understanding core networking in Java is essential for building networked applic
 
 Here is a breakdown of the core networking concepts in Java, organized from low-level sockets to modern non-blocking I/O.
 
+🔴 [Ashish - Networking concepts](https://www.youtube.com/watch?v=qUHyCjOo8Z8)
+
 ---
 
 ## 1. IP Addresses and Domain Names (`InetAddress`)
 
 Before connecting to a network, Java uses the `InetAddress` class to represent an Internet Protocol (IP) address. It handles both IPv4 and IPv6 addresses and performs DNS lookups.
 
-* **Key Class:** `java.net.InetAddress`
-* **Common Use Case:** Resolving a hostname to an IP address or getting the local machine's address.
+- **Key Class:** `java.net.InetAddress`
+- **Common Use Case:** Resolving a hostname to an IP address or getting the local machine's address.
 
 ```java
 import java.net.InetAddress;
@@ -35,10 +37,12 @@ Java provides different types of sockets depending on the transport layer protoc
 ### A. TCP Sockets (`Socket` and `ServerSocket`)
 
 Transmission Control Protocol (TCP) is connection-oriented, reliable, and ensures ordered delivery of data.
-* **`ServerSocket`**: Used by servers to listen for incoming client connections on a specific port.
-* **`Socket`**: Used by clients to connect to a server, or returned by `ServerSocket.accept()` once a connection is established.
+
+- **`ServerSocket`**: Used by servers to listen for incoming client connections on a specific port.
+- **`Socket`**: Used by clients to connect to a server, or returned by `ServerSocket.accept()` once a connection is established.
 
 **TCP Server Example:**
+
 ```java
 import java.io.*;
 import java.net.*;
@@ -48,10 +52,10 @@ public class SimpleServer {
         try (ServerSocket serverSocket = new ServerSocket(8080)) {
             System.out.println("Server listening on port 8080...");
             Socket clientSocket = serverSocket.accept();
-            
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);
-            
+
             String message = reader.readLine();
             System.out.println("Received: " + message);
             writer.println("Hello from Java Server!");
@@ -63,8 +67,9 @@ public class SimpleServer {
 ### B. UDP Sockets (`DatagramSocket` and `DatagramPacket`)
 
 User Datagram Protocol (UDP) is connectionless and faster, but unreliable (packets may arrive out of order, get duplicated, or be dropped). It is ideal for streaming, gaming, or DNS lookups.
-* **`DatagramSocket`**: Sends and receives UDP datagram packets.
-* **`DatagramPacket`**: Wraps the data payload along with the target destination IP and port.
+
+- **`DatagramSocket`**: Sends and receives UDP datagram packets.
+- **`DatagramPacket`**: Wraps the data payload along with the target destination IP and port.
 
 ---
 
@@ -72,9 +77,9 @@ User Datagram Protocol (UDP) is connectionless and faster, but unreliable (packe
 
 If you need to interact with web resources rather than raw sockets, Java provides high-level abstractions for Uniform Resource Identifiers and Locators.
 
-* **`URI`**: Identifies a resource (syntax parsing).
-* **`URL`**: Identifies a resource *and* provides the means to access it (can open streams to download content).
-* **`HttpURLConnection`**: A lightweight class built into the standard library for sending HTTP/HTTPS requests (though modern Java applications often prefer `java.net.http.HttpClient`).
+- **`URI`**: Identifies a resource (syntax parsing).
+- **`URL`**: Identifies a resource _and_ provides the means to access it (can open streams to download content).
+- **`HttpURLConnection`**: A lightweight class built into the standard library for sending HTTP/HTTPS requests (though modern Java applications often prefer `java.net.http.HttpClient`).
 
 ---
 
@@ -110,16 +115,17 @@ public class HttpClientExample {
 Traditional sockets (`java.net`) use **blocking I/O**, meaning a thread blocks (waits idly) while reading from or writing to a stream. For high-concurrency applications handling thousands of simultaneous connections, this approach consumes too much memory and thread overhead.
 
 Java NIO (New I/O) introduces non-blocking networking using:
-* **`Channel`**: Open connections (like `SocketChannel` or `ServerSocketChannel`).
-* **`Buffer`**: Memory blocks where data is read or written.
-* **`Selector`**: A component that monitors multiple channels for events (such as "connection ready" or "data available"), allowing a single thread to manage many network connections efficiently.
+
+- **`Channel`**: Open connections (like `SocketChannel` or `ServerSocketChannel`).
+- **`Buffer`**: Memory blocks where data is read or written.
+- **`Selector`**: A component that monitors multiple channels for events (such as "connection ready" or "data available"), allowing a single thread to manage many network connections efficiently.
 
 ---
 
 ## Summary Checklist for Java Networking
 
-* Use **`InetAddress`** for IP/DNS lookups.
-* Use **`Socket` / `ServerSocket`** for traditional TCP client-server apps.
-* Use **`DatagramSocket`** for lightweight UDP communication.
-* Use **`HttpClient`** for modern REST and HTTP web requests.
-* Use **`java.nio` (Channels & Selectors)** when building high-concurrency, non-blocking servers.
+- Use **`InetAddress`** for IP/DNS lookups.
+- Use **`Socket` / `ServerSocket`** for traditional TCP client-server apps.
+- Use **`DatagramSocket`** for lightweight UDP communication.
+- Use **`HttpClient`** for modern REST and HTTP web requests.
+- Use **`java.nio` (Channels & Selectors)** when building high-concurrency, non-blocking servers.

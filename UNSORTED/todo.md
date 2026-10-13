@@ -1,18 +1,61 @@
 > Explain core concepts, best practices and practical examples for
 
-# architecture
+# Fundamentals
+
+- Object.requireNonNull() - lighter than Optional
+- default methods (interfaces) - backward compatibility, not forcing implementation of a new method
+
+# Algorithms
+
+- [techinterviewhandbook - algorithms](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)
+
+- [Ashish - Algorithm patterns](https://www.youtube.com/watch?v=DjYZk8nrXVY)
+
+# System design
+
+- [Ashish - System Design](https://www.youtube.com/watch?v=Yc8QS10payQ)
+
+https://www.systemdesignhandbook.com/guides/design-a-stock-exchange-system/#non-functional-requirements-that-drive-the-design
+
+https://algomaster.io/learn/system-design-interviews/design-notification-service
+
+### Design Patterns
+
+- [Ashish - Design Patterns](https://www.youtube.com/watch?v=rpt8PpIPhJQ)
+
+### Low Level Design
+
+- 🔥 [Ashis - Low Level Design - code](https://github.com/ashishps1/awesome-low-level-design)
+
+- [Ashish - Low Level Design](https://www.youtube.com/watch?v=OhCp6ppX6bg)
+
+# Architecture
 
 - hexagonal architecture - adapters and ports to separate core from infrastructure (db, api)
-- when domain is complex (banking, insurance, pricing)
+  - when domain is complex (banking, insurance, pricing)
+  - https://www.thoughtworks.com/insights/blog/architecture/hexagonal-architecture-explained-practical-example
+  - https://github.com/Kinle/pizzaco-hexagonal-ddd/
 
 - event sourcing
 
-# message queues
+# Microservices
+
+### message queues
 
 - rabbitmq
 - kafka
 
-# hibernate
+# WEB
+
+### spring
+
+springa rest https://www.educative.io/courses/rest-api-with-spring-jpa-and-springfox
+
+spring data https://www.educative.io/courses/spring-data-bridging-multiple-databases
+
+# Persistence
+
+### #hibernate
 
 - flush()
 
@@ -23,35 +66,29 @@
 
   // The second query could fail as it required data from first query to be persisted.
 
-# microservices
+### caching
 
-# security
+https://aws.plainenglish.io/caching-in-microservices-self-managed-vs-aws-managed-10789a8889d5
+
+# Security
 
 - sticky sessions
+
+  When a user logs into an online shopping website, the load balancer continues sending all requests from that user to the same server. This allows the user's login session and shopping cart to remain available without requiring re-authentication.
+
+- SSL/TLS termination
+
+  the process in which a load balancer decrypts incoming HTTPS traffic before forwarding the request to backend servers. This reduces the processing overhead on application servers and simplifies SSL certificate management.
+
+  Example: A banking website receives encrypted HTTPS requests from users. The load balancer decrypts the requests, forwards them to the web servers over the internal network, and then encrypts the responses before sending them back to users.
+
 - passkeys (passwordless authentication)
   - Storage: Website stores the public key in its database.
   - Unlocking: User device holds the private key, unlocked locally via biometrics.
 
-# fundamentals
+# observability
 
-- switch
-- Object.requireNonNull() - lighter than Optional
-- records - immutable data classes, dtos, return multiple values from methods
-- default methods (interfaces) - backward compatibility, not forcing implementation of a new method
-
-# logs
-
-# system design
-
-https://www.systemdesignhandbook.com/guides/design-a-stock-exchange-system/#non-functional-requirements-that-drive-the-design
-
-https://algomaster.io/learn/system-design-interviews/design-notification-service
-
-# spring
-
-springa rest https://www.educative.io/courses/rest-api-with-spring-jpa-and-springfox
-
-spring data https://www.educative.io/courses/spring-data-bridging-multiple-databases
+https://aws.plainenglish.io/implementing-observability-in-a-kubernetes-environment-open-source-vs-aws-native-ab016670d9b0
 
 # concepts
 

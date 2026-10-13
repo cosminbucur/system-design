@@ -15,6 +15,8 @@ Whichever side does the discovery, something has to track which instances curren
 | Consul                                              | Either — HAProxy/Envoy for server-side, Consul client library for client-side |
 | Cloud provider's own registry (AWS Cloud Map, etc.) | ALB/NLB target groups (server-side)                                           |
 
+![alt text](heartbeat.png)
+
 ## 2. Server-Side Discovery
 
 The caller sends a request to a single well-known address, unaware that multiple instances or a registry even exist. A router in front of the actual instances queries the registry and forwards the request.

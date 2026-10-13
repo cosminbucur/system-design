@@ -1,5 +1,7 @@
 Caching trades memory (and a small risk of staleness) for speed, by keeping a copy of expensive-to-produce data somewhere faster to read than its source of truth. It's one of the highest-leverage performance techniques available — but "there are only two hard things in computer science: cache invalidation and naming things" is a cliché precisely because getting invalidation wrong causes real, hard-to-debug correctness bugs. Treat every cache as a deliberate consistency tradeoff, not a free performance win.
 
+[Caching in Microservices - Self managed vs AWS managed](https://aws.plainenglish.io/caching-in-microservices-self-managed-vs-aws-managed-10789a8889d5)
+
 ## 1. Why Cache — And What You're Trading Away
 
 | Benefit                                                                                      | Cost                                                                                           |
